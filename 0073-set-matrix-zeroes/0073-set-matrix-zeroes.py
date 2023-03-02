@@ -22,14 +22,53 @@ class Solution:
         """
         self.p2(matrix)
         
+        
     '''Approach 2'''
-    def p2(self, m: List[List[int]]) -> None:
-        import copy
+    def p3(self, m: List[List[int]]) -> None:
+
         r, c = len(m), len(m[0])
         
         row_z, col_z = False, False
         
-        x = copy.deepcopy(m)
+        for i in range(r):
+            if m[i][0] == 0:
+                row_z = True
+        
+        for j in range(c):
+            if m[0][j] == 0:
+                col_z = True
+        
+        for i in range(1, r):
+            for j in range(1, c):
+                v = m[i][j]
+                if v == 0:
+                    m[i][0] = 0
+                    m[0][j] = 0
+        
+        for i in range(1, r):
+            if m[i][0] == 0:
+                for j in range(c):
+                    m[i][j] = 0
+        
+        for j in range(1, c):
+            if m[0][j] == 0:
+                for i in range(r):
+                    m[i][j] = 0
+
+        if row_z:
+            for i in range(r):
+                m[i][0] = 0
+
+        if col_z:
+            for j in range(c):
+                m[0][j] = 0
+        
+    '''Approach 2'''
+    def p2(self, m: List[List[int]]) -> None:
+
+        r, c = len(m), len(m[0])
+        
+        row_z, col_z = False, False
         
         i = 0
         while i < r:
