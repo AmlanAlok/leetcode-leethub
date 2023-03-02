@@ -1,10 +1,79 @@
+'''
+Testcases
+
+[[0,1,2,0],
+[3,4,5,2],
+[1,3,1,5]]
+
+[[1,1,1],
+[1,0,1],
+[1,1,1]]
+
+[[1,2,3,4],
+[5,0,7,8],
+[0,10,11,12],
+[13,14,15,0]]
+'''
+
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        self.p1(matrix)
+        self.p2(matrix)
+        
+    '''Approach 2'''
+    def p2(self, m: List[List[int]]) -> None:
+        import copy
+        r, c = len(m), len(m[0])
+        
+        row_z, col_z = False, False
+        
+        x = copy.deepcopy(m)
+        
+        i = 0
+        while i < r:
+            if m[i][0] == 0:
+                row_z = True
+            i+=1
+        
+        j = 0
+        while j < c:
+            if m[0][j] == 0:
+                col_z = True
+            j+=1
+        
+        i = 1
+        while i < r:
+            j = 1
+            while j < c:
+                v = m[i][j]
+                if v == 0:
+                    m[i][0] = 0
+                    m[0][j] = 0
+                j+=1
+            i+=1
+        
+        print(m)
+        
+        for i in range(1, r):
+            if m[i][0] == 0:
+                for j in range(c):
+                    m[i][j] = 0
+        
+        for j in range(1, c):
+            if m[0][j] == 0:
+                for i in range(r):
+                    m[i][j] = 0
 
+        if row_z:
+            for i in range(r):
+                m[i][0] = 0
+
+        if col_z:
+            for j in range(c):
+                m[0][j] = 0
+        
 
 
     '''Approach 1'''
