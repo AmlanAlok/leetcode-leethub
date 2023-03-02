@@ -33,10 +33,12 @@ class Solution:
         for i in range(r):
             if m[i][0] == 0:
                 row_z = True
+                break
         
         for j in range(c):
             if m[0][j] == 0:
                 col_z = True
+                break
         
         for i in range(1, r):
             for j in range(1, c):
