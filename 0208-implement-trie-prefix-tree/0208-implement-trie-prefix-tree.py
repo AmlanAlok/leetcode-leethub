@@ -5,12 +5,16 @@
 ["Trie","insert","startsWith"]
 [[],["hotdog"],["dog"]]
 '''
+'''
+If m = len(word)
 
+'''
 class Trie:
     def __init__(self):
         self.children = {}
         self.isWord = False
     
+    '''TC = m, SC = m'''
     def insert(self, word: str) -> None:
         
         cur = self
@@ -22,6 +26,7 @@ class Trie:
             cur = cur.children[c]
         cur.isWord = True
     
+    '''TC = m, SC = 1'''
     def search(self, word: str) -> bool:
         
         cur = self
@@ -33,6 +38,7 @@ class Trie:
                 return False
         return cur.isWord
     
+    '''TC = m, SC = 1'''
     def startsWith(self, prefix: str) -> bool:
         
         cur = self
