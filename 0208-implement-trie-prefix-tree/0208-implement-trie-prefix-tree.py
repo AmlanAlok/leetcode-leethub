@@ -6,56 +6,96 @@
 [[],["hotdog"],["dog"]]
 '''
 
-class TrieNode:
+class Trie:
     def __init__(self):
         self.children = {}
         self.isWord = False
-        
-
-class Trie:
-    def __init__(self):
-        self.root = TrieNode()
-        
+    
     def insert(self, word: str) -> None:
         
-        cur = self.root
+        cur = self
         
         for c in word:
             if c not in cur.children:
-                cur.children[c] = TrieNode()
-            
-            cur = cur.children[c]
-        
-        cur.isWord = True            
+                cur.children[c] = Trie()
                 
+            cur = cur.children[c]
+        cur.isWord = True
+    
     def search(self, word: str) -> bool:
         
-        cur = self.root
+        cur = self
         
         for c in word:
             if c in cur.children:
                 cur = cur.children[c]
             else:
                 return False
-        
         return cur.isWord
-            
+    
     def startsWith(self, prefix: str) -> bool:
         
-        cur = self.root
+        cur = self
         
         for c in prefix:
             if c in cur.children:
                 cur = cur.children[c]
             else:
                 return False
-        
         return True
+
+
+
+'''First Approach-------------------------------------'''
+# class TrieNode:
+#     def __init__(self):
+#         self.children = {}
+#         self.isWord = False
+        
+
+# class Trie:
+#     def __init__(self):
+#         self.root = TrieNode()
+        
+#     def insert(self, word: str) -> None:
+        
+#         cur = self.root
+        
+#         for c in word:
+#             if c not in cur.children:
+#                 cur.children[c] = TrieNode()
+            
+#             cur = cur.children[c]
+        
+#         cur.isWord = True            
+                
+#     def search(self, word: str) -> bool:
+        
+#         cur = self.root
+        
+#         for c in word:
+#             if c in cur.children:
+#                 cur = cur.children[c]
+#             else:
+#                 return False
+        
+#         return cur.isWord
+            
+#     def startsWith(self, prefix: str) -> bool:
+        
+#         cur = self.root
+        
+#         for c in prefix:
+#             if c in cur.children:
+#                 cur = cur.children[c]
+#             else:
+#                 return False
+        
+#         return True
         
             
         
-        
-        
+'''My first attempt-------------------------------------------------------------'''
 #     def __init__(self):
 #         self.d = {}
 #         self.is_word = False
