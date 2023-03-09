@@ -10,15 +10,15 @@ class Solution:
     def ans2(self, s: str) -> str:
         s = s.strip()
         
-        s = s.split(' ')
-        
+        s = s.split()
+        print(s)
         t = []
         
-        for x in s:
-            if x != '':
-                t.append(x)
+        # for x in s:
+        #     if x != '':
+        #         t.append(x)
         
-        return ' '.join(t[::-1])
+        return ' '.join(s[::-1])
         
     def ans1(self, s: str) -> str:
         
