@@ -53,6 +53,7 @@ class Solution:
         
         return t
     
+    '''24 ms ans from solution'''
     def ans3(self, n: int) -> str:
         
         def say(s: str) -> str:
