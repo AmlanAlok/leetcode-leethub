@@ -1,6 +1,6 @@
 class Solution:
     def countAndSay(self, n: int) -> str:
-        return self.ans2(n)
+        return self.ans3(n)
     
     '''3 loops'''
     def ans1(self, n: int) -> str:
@@ -52,7 +52,26 @@ class Solution:
             i = j
         
         return t
+    
+    def ans3(self, n: int) -> str:
         
+        def say(s: str) -> str:
+            s = s + "#"
+            c, res = 1, ""
+            for i in range(1, len(s)):
+                if s[i] != s[i-1]:
+                    # Output
+                    res += str(c)+s[i-1]
+                    c = 1
+                else:
+                    c += 1
+            return res
+
+        res = "1"
+        for i in range(1, n):
+            res = say(res)
+        
+        return res
     
     
                 
