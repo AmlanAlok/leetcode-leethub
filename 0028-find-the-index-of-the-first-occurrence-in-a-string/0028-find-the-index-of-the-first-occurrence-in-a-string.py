@@ -11,7 +11,7 @@
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        return ans1(haystack, needle)
+        return ans2(haystack, needle)
     
 '''Sliding window sol'''
 def ans2(x, y):
