@@ -13,7 +13,7 @@ class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         return ans2(haystack, needle)
     
-'''Sliding window sol'''
+'''Sliding window sol - TC = O(nm), SC = O(1)'''
 def ans2(x, y):
     m, n = len(y), len(x)
     last_idx = n-m
