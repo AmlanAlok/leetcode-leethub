@@ -11,8 +11,24 @@
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        return ans1(haystack, needle)
+        return ans2(haystack, needle)
     
+'''Sliding window sol'''
+def ans2(x, y):
+    m, n = len(y), len(x)
+    last_idx = n-m
+    for start in range(last_idx+1):
+        for i in range(m):
+            if y[i] != x[start + i]:
+                break
+            if i == m-1:
+                return start
+            
+          
+    return -1
+    
+
+'''My first attempt: My sliding window code'''
 def ans1(x: str, y : str):
     
     if len(y) > len(x):
