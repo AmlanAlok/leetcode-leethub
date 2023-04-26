@@ -24,7 +24,6 @@ def ans2(x, y):
             if i == m-1:
                 return start
             
-          
     return -1
     
 
