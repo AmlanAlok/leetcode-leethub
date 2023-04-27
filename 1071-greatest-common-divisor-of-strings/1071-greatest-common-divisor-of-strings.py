@@ -21,14 +21,15 @@ def ans2(s1, s2):
     n, m = len(s1), len(s2)
 
     for j in range(m, 0, -1):
-        r = n % j
-        if r == 0:
-            base = s2[0:j]
-            
-            p, q = n // j, m//j
-            
-            if p*base == s1 and q*base == s2:
-                return base
+        # r = n % j
+        if n % j or m % j:
+            continue
+        base = s2[0:j]
+
+        p, q = n // j, m//j
+
+        if p*base == s1 and q*base == s2:
+            return base
     return ''
     
 '''My attempt'''
