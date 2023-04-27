@@ -13,8 +13,6 @@
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         return ans2(str1, str2)
-
-    
     
 def ans2(s1, s2):
     if len(s2) > len(s1):
@@ -33,6 +31,7 @@ def ans2(s1, s2):
                 return base
     return ''
     
+'''My attempt'''
 def ans1(s1, s2):
 
     if len(s2) > len(s1):
