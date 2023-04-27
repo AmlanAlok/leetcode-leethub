@@ -12,8 +12,27 @@
 '''
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
-        return ans1(str1, str2)
+        return ans2(str1, str2)
 
+    
+    
+def ans2(s1, s2):
+    if len(s2) > len(s1):
+        s1, s2 = s2, s1
+
+    n, m = len(s1), len(s2)
+
+    for j in range(m, 0, -1):
+        r = n % j
+        if r == 0:
+            base = s2[0:j]
+            
+            p, q = n // j, m//j
+            
+            if p*base == s1 and q*base == s2:
+                return base
+    return ''
+    
 def ans1(s1, s2):
 
     if len(s2) > len(s1):
