@@ -18,7 +18,8 @@ def gcd(n1, n2):
     for i in range(min(n1, n2), 0, -1):
         if n1%i == 0 and n2%i == 0:
             return i
-    
+
+'''TC = (m+n)*min(m, n), SC = m+n to compare string'''
 def ans3(s1, s2):
     return s1[:gcd(len(s1), len(s2))] if s1+s2 == s2+s1 else ''
     
