@@ -12,7 +12,17 @@
 '''
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
-        return ans2(str1, str2)
+        return ans3(str1, str2)
+    
+def gcd(n1, n2):
+    for i in range(min(n1, n2), 0, -1):
+        if n1%i == 0 and n2%i == 0:
+            return i
+    
+def ans3(s1, s2):
+    return s1[:gcd(len(s1), len(s2))] if s1+s2 == s2+s1 else ''
+    
+    
     
 def ans2(s1, s2):
     if len(s2) > len(s1):
@@ -24,7 +34,7 @@ def ans2(s1, s2):
         # r = n % j
         if n % j or m % j:
             continue
-        base = s2[0:j]
+        base = s2[0:j]      # O(k) big TC hit
 
         p, q = n // j, m//j
 
