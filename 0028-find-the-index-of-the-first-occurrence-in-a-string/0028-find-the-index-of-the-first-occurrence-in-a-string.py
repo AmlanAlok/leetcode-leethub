@@ -11,7 +11,23 @@
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        return ans2(haystack, needle)
+        return p1(haystack, needle)
+
+def p1(x, y):
+    
+    l1, l2 = len(x), len(y)
+    
+    last_idx = l1-l2
+    
+    for i in range(last_idx+1):
+        st = x[i:i+l2]
+        if st == y:
+            return i
+    return -1
+    
+    
+    
+    
     
 '''Sliding window sol - TC = O(nm), SC = O(1)'''
 def ans2(x, y):
