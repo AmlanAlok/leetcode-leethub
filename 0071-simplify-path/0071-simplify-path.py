@@ -22,7 +22,7 @@ def ans4(path):
         if p == '..':
             if s:
                 s.pop()
-        elif p == '.'  or p == '':
+        elif p in {'.', ''}:
             continue
         else:
             s.append(p)
@@ -41,7 +41,7 @@ def ans3(path):
         if p == '..':
             if s:
                 s.pop()
-        elif p == '.'  or p == '':
+        elif p in {'.', ''}:
             continue
         else:
             s.append(p)
