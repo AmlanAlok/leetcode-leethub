@@ -10,6 +10,7 @@ class Solution:
     def simplifyPath(self, path: str) -> str:
         return ans2(path)
 
+'''TC = O(n), SC = O(2n)'''
 def ans3(path):
     from collections import deque
         
@@ -18,21 +19,14 @@ def ans3(path):
     s = deque()
     
     for p in parts:
-        if p == '..' and s:
-            s.pop()
-        if p == '.' or p == '..' or p == '':
+        if p == '..':
+            if s:
+                s.pop()
+        elif p == '.'  or p == '':
             continue
+        else:
+            s.append(p)
 
-        s.append(p)
-    
-#     ans = ''
-    
-#     for st in s:
-#         ans += '/' + st
-    
-#     if ans is '':
-#         return '/'
-#     return ans
     return '/' + '/'.join(s)
         
 def fail1(path: str) -> str:
