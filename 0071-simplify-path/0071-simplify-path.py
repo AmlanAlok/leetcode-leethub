@@ -41,10 +41,10 @@ def ans3(path):
         if p == '..':
             if s:
                 s.pop()
-        elif p in {'.', ''}:
             continue
-        else:
-            s.append(p)
+        if p in {'.', ''}:
+            continue
+        s.append(p)
 
     return '/' + '/'.join(s)
         
