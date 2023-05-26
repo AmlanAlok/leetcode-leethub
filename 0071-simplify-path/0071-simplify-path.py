@@ -8,7 +8,7 @@ Test case
 class Solution:
     
     def simplifyPath(self, path: str) -> str:
-        return ans3(path)
+        return ans4(path)
     
 '''Using list'''
 def ans4(path):
