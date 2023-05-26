@@ -54,7 +54,7 @@ def ans1(path: str) -> str:
 def ans2(path):
     from collections import deque
         
-    path = path.replace('//', '/')
+    # path = path.replace('//', '/')
     parts = path.split('/')
     
     s = deque()
