@@ -9,6 +9,30 @@ class Solution:
     
     def simplifyPath(self, path: str) -> str:
         return ans2(path)
+
+def ans3(path):
+    from collections import deque
+        
+    parts = path.split('/')
+    
+    s = deque()
+    
+    for p in parts:
+        if p == '..' and s:
+            s.pop()
+        if p == '.' or p == '..' or p == '':
+            continue
+
+        s.append(p)
+    
+    ans = ''
+    
+    for st in s:
+        ans += '/' + st
+    
+    if ans is '':
+        return '/'
+    return ans
         
 def fail1(path: str) -> str:
         
@@ -54,7 +78,7 @@ def ans1(path: str) -> str:
 def ans2(path):
     from collections import deque
         
-    # path = path.replace('//', '/')
+    path = path.replace('//', '/')
     parts = path.split('/')
     
     s = deque()
