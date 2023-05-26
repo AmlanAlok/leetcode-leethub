@@ -25,14 +25,15 @@ def ans3(path):
 
         s.append(p)
     
-    ans = ''
+#     ans = ''
     
-    for st in s:
-        ans += '/' + st
+#     for st in s:
+#         ans += '/' + st
     
-    if ans is '':
-        return '/'
-    return ans
+#     if ans is '':
+#         return '/'
+#     return ans
+    return '/' + '/'.join(s)
         
 def fail1(path: str) -> str:
         
