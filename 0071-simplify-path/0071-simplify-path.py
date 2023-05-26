@@ -9,6 +9,25 @@ class Solution:
     
     def simplifyPath(self, path: str) -> str:
         return ans2(path)
+    
+'''Using list'''
+def ans4(path):
+    from collections import deque
+        
+    parts = path.split('/')
+    
+    s = []
+    
+    for p in parts:
+        if p == '..':
+            if s:
+                s.pop()
+        elif p == '.'  or p == '':
+            continue
+        else:
+            s.append(p)
+
+    return '/' + '/'.join(s)
 
 '''TC = O(n), SC = O(2n)'''
 def ans3(path):
