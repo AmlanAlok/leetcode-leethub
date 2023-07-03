@@ -13,7 +13,7 @@ class TreeNode:
     
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        return ans1(root)
+        return ans2(root)
     
 def max_depth(root: TreeNode):
     
