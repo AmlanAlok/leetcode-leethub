@@ -13,7 +13,7 @@ class TreeNode:
     
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        return ans2(root)
+        return ans1(root)
     
 def max_depth(root: TreeNode):
     
@@ -35,12 +35,6 @@ def max_depth(root: TreeNode):
     
     
 def ans1(root):
-#     if root:
-#         x = TreeNode(root[0])
-        
-#         for i in range(1, len(root)):
-#             if root[i] != 'null':
-#                 add_node(root[i], x)
     if root:
         return max_depth(root)
     return 0
