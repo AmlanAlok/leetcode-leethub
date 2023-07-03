@@ -10,25 +10,10 @@ class TreeNode:
         self.left = left
         self.right = right
         
-def add_node(data, root: TreeNode):
-    if data > root.val:
-        if root.right:
-            add_node(data, root.right)
-        else:
-            root.right = TreeNode(data)
-    if data < root.val:
-        if root.left:
-            add_node(data, root.left)
-        else:
-            root.left = TreeNode(data)
-    if data == root.val:
-        return 
     
-        
-        
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        return ans1(root)
+        return ans2(root)
     
 def max_depth(root: TreeNode):
     
@@ -60,6 +45,12 @@ def ans1(root):
         return max_depth(root)
     return 0
     
+def ans2(root):
+    
+    if root == None:
+        return 0
+    
+    return 1 + max(ans2(root.left), ans2(root.right))
         
         
     
