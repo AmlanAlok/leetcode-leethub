@@ -21,8 +21,7 @@ def ans2(s):
     st = list(s)
     
     while i < j:
-        # print(st[i], st[j])
-        # print(i, l)
+
         while i < l and st[i] not in vowels:
             i += 1
         while j >= 0 and st[j] not in vowels:
