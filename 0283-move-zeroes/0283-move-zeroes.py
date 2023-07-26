@@ -10,7 +10,10 @@ class Solution:
         """
         return ans2(nums)
     
-    
+
+'''
+TC = n, SC = 1
+'''
 def ans2(nums):
     
     j = -1
@@ -22,7 +25,10 @@ def ans2(nums):
             
         
 
-    
+'''
+My Answer - Unnecessary complexity
+TC = n, SC = 1
+'''    
 def ans1(nums):
     
     c = 0
