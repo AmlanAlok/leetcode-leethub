@@ -8,7 +8,20 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        return ans1(nums)
+        return ans2(nums)
+    
+    
+def ans2(nums):
+    
+    j = -1
+    
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            j += 1
+            nums[i], nums[j] = nums[j], nums[i]
+            
+        
+
     
 def ans1(nums):
     
