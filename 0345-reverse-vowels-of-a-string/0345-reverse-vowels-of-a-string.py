@@ -7,8 +7,6 @@ class Solution:
 def ans1(s):
     
     vowels = 'aeiouAEIOU'
-    l = len(s)
-    
     found = deque()
     ans = ''
     
