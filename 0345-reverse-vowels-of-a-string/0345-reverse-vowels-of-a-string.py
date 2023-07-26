@@ -1,15 +1,43 @@
 '''
 "hello"
 "leetcode"
+
+".,"
 '''
 
 from collections import deque
 
 class Solution:
     def reverseVowels(self, s: str) -> str:
-        return ans1(s)
+        # return ans1(s)
+        return ans2(s)
     
 
+def ans2(s):
+    vowels = 'aeiouAEIOU'
+    l = len(s)
+    i, j = 0, len(s)-1
+    
+    st = list(s)
+    
+    while i < j:
+        # print(st[i], st[j])
+        # print(i, l)
+        while i < l and st[i] not in vowels:
+            i += 1
+        while j >= 0 and st[j] not in vowels:
+            j -= 1
+        
+        if i<j:
+            st[i], st[j] = st[j], st[i]
+            i += 1
+            j -= 1
+        else:
+            break
+
+    
+    return ''.join(st)
+    
 
 '''
 TC = n, 
