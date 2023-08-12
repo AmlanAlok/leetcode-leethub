@@ -9,6 +9,7 @@ class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         return ans1(stones)
 
+'''TC = n, SC = n'''
 def ans1(stones):
     
     nums = [i*-1 for i in stones]
