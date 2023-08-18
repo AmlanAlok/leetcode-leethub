@@ -27,18 +27,17 @@ def ans1(nums, k):
     
     nums = [(-v, k) for k,v in d.items()]   # -v bcuz we want a max heap
     
-    print(nums)
+    # print(nums)
     
-    # hq.heapify(nums)
     hq.heapify(nums)
-    print(nums)
+    # print(nums)
 
     ans = []
     for i in range(0, k):
         t = hq.heappop(nums)
         ans.append(t[1])
 
-    return ans
+    return ans 
     
         
         
