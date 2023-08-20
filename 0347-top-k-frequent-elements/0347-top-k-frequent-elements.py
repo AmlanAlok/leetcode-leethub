@@ -8,6 +8,8 @@ import random
 1
 [3,0,1,0]
 1
+[4,5,5,2,1,1,1,5,2,3,3,5,2]
+3
 '''
 """
 The heapq module functions can take either a list of items or a list of tuples as a parameter.
