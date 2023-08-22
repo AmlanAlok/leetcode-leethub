@@ -100,6 +100,13 @@ def ans2(nums, k):
     # Return top k frequent elements
     return unique[n - k:]
     
+
+# def ans3(nums, k):
+#     pass
+#     count = Counter(nums)
+#     unique = list(count.keys())
+    
+    
     
     
     
