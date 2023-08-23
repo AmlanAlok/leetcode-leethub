@@ -10,6 +10,8 @@ import random
 1
 [4,5,5,2,1,1,1,5,2,3,3,5,2]
 3
+[5,-3,9,1,7,7,9,10,2,2,10,10,3,-1,3,7,-9,-1,3,3]
+3
 '''
 """
 The heapq module functions can take either a list of items or a list of tuples as a parameter.
@@ -17,7 +19,7 @@ The heapq module functions can take either a list of items or a list of tuples a
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        return ans2(nums, k)
+        return ans3(nums, k)
     
 def ans1(nums, k):
     
@@ -101,10 +103,51 @@ def ans2(nums, k):
     return unique[n - k:]
     
 
-# def ans3(nums, k):
-#     pass
-#     count = Counter(nums)
-#     unique = list(count.keys())
+def ans3(nums, k):
+    count = Counter(nums)
+    unique = list(count.keys())
+    
+    
+    def partition(l, r, pivot):
+        
+        pivot_freq = count[unique[pivot]]
+        
+        unique[pivot], unique[r] = unique[r], unique[pivot]
+        
+        idx = l
+        
+        for i in range(l, r):
+            if count[unique[i]] < pivot_freq:
+                unique[idx], unique[i] = unique[i], unique[idx]
+                idx += 1
+        
+        unique[r], unique[idx] = unique[idx], unique[r]
+        
+        return idx
+        
+    
+    def quickselect(l, r, k_small):
+        
+        if l == r:
+            return
+        
+        pivot = random.randint(l, r)
+        
+        pivot = partition(l, r, pivot)
+        
+        if k_small == pivot:
+            return
+        elif k_small < pivot:
+            quickselect(l, pivot-1, k_small)
+        else:
+            quickselect(pivot+1, r, k_small)
+        
+    n = len(unique)
+    
+    quickselect(0, n-1, n-k)
+    
+    return unique[n-k:]
+        
     
     
     
