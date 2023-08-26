@@ -7,7 +7,7 @@ import heapq as hp
 
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        return ans1(lists)
+        return ans2(lists)
 
 def recur(nums):        # TC = n as it recurs n times
     # print(nums)
