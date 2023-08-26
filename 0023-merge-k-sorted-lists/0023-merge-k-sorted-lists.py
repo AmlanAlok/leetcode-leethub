@@ -17,6 +17,7 @@ def recur(nums):        # TC = n as it recurs n times
     val = hp.heappop(nums)      # TC = log n
     return ListNode(val, recur(nums))
 
+'''n log(n)'''
 def ans1(lists):
     
     a = []
@@ -35,35 +36,26 @@ def ans1(lists):
     return z
 
 # https://medium.com/tech-life-fun/leetcode-23-merge-k-sorted-lists-graphically-explained-python3-solution-d0e77419956c
+'''TC = n log(k)'''
 def ans2(lists):
     h = []
     head = pt = ListNode(0)
     c = 0
     
-    for ll in lists:
+    for ll in lists:        # TC = k
         if ll:
             hp.heappush(h, (ll.val, c, ll))
             c += 1
     
-    while len(h):
-        sm = hp.heappop(h)[2]
+    while len(h):           # TC = n
+        sm = hp.heappop(h)[2]       # TC = log k
         pt.next = sm
         pt = pt.next
         
         if sm.next:
             x = sm.next
-            hp.heappush(h, (x.val, c, x))
+            hp.heappush(h, (x.val, c, x))       # TC = log k
             c += 1
             
     return head.next
-            
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+                
