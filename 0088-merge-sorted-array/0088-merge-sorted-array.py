@@ -23,13 +23,16 @@ class Solution(object):
         """
         return ans1(nums1, m, nums2, n)
     
+'''
+TC = m+n, SC = m
+'''
 def ans1(nums1, m, nums2, n):
     
-    a = nums1[:m]
+    a = nums1[:m]       # SC = m
     
     i,j,k = 0,0,0
     
-    while k < m+n:
+    while k < m+n:      # TC = m+n
         
         if j>=n or (i<m and a[i] <= nums2[j]):
             nums1[k] = a[i]
