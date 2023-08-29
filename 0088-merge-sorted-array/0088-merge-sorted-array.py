@@ -44,13 +44,16 @@ def ans1(nums1, m, nums2, n):
     
     return nums1
 
-
+'''
+TC = m+n
+SC = 1
+'''
 def ans2(nums1, m, nums2, n):
     
-    i = m+n-1   # last index
+    i = m+n-1           # last index
     j, k = m-1, n-1
     
-    while i>=0:
+    while i>=0:     # TC = m+n
         
         if k<0 or (j>=0 and nums1[j] >= nums2[k]):
             nums1[i] = nums1[j]
