@@ -1,8 +1,20 @@
+'''
+"abc"
+"pqr"
+"ab"
+"pqrs"
+"abcd"
+"pq"
+'''
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
-        return ans1(word1, word2)
+        return ans2(word1, word2)
     
-
+'''
+Two Pointer Approach
+TC = m+n
+SC = 1 
+'''
 def ans1(word1, word2):
     
     ans = ''
@@ -18,6 +30,36 @@ def ans1(word1, word2):
             j += 1
             
     return ans
+
+'''
+One-Pointer
+TC = max(m, n)
+SC = 1
+'''
+def ans2(word1, word2):
+    
+    m, n = len(word1), len(word2)
+    ans = ''
+    mx = max(m, n)
+    
+    for i in range(mx):
+        if i < m:
+            ans += word1[i]
+        if i < n:
+            ans += word2[i]
+    
+    return ans
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
             
         
         
