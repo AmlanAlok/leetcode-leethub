@@ -3,7 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        return ans1(nums1, m, nums2, n)
+        return ans2(nums1, m, nums2, n)
     
 '''
 TC = m+n, SC = m
