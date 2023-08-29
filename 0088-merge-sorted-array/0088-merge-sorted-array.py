@@ -1,27 +1,9 @@
-'''
-[1,2,3,0,0,0]
-3
-[2,5,6]
-3
-[1]
-1
-[]
-0
-[0]
-0
-[1]
-1
-'''
-class Solution(object):
-    def merge(self, nums1, m, nums2, n):
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
-        :type nums1: List[int]
-        :type m: int
-        :type nums2: List[int]
-        :type n: int
-        :rtype: None Do not return anything, modify nums1 in-place instead.
+        Do not return anything, modify nums1 in-place instead.
         """
-        return ans2(nums1, m, nums2, n)
+        return ans1(nums1, m, nums2, n)
     
 '''
 TC = m+n, SC = m
@@ -42,7 +24,7 @@ def ans1(nums1, m, nums2, n):
             j+=1
         k+=1
     
-    return nums1
+    # return nums1
 
 '''
 TC = m+n
@@ -67,13 +49,4 @@ def ans2(nums1, m, nums2, n):
         
         i-=1
     
-    return ans1
-    
-    
-    
-    
-    
-    
-    
-
-        
+    # return nums1
