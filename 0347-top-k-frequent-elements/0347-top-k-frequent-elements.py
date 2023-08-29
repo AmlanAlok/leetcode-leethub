@@ -19,7 +19,7 @@ The heapq module functions can take either a list of items or a list of tuples a
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        return p1(nums, k)
+        return p2(nums, k)
     
 def ans1(nums, k):
     
@@ -232,6 +232,62 @@ def p1(nums, k):
     quickselect(0, n-1, n-k)
     
     return u[n-k:]
+    
+    
+def p2(nums, k):
+    c = Counter(nums)
+    u = list(c.keys())
+    
+    def partition(l, r, p):
+        pf = c[u[p]]
+        
+        u[p], u[r] = u[r], u[p]
+        
+        idx = l
+        
+        for i in range(l, r):
+            if c[u[i]] < pf:
+                u[idx], u[i] = u[i], u[idx]
+                idx += 1
+        
+        u[r], u[idx] = u[idx], u[r]
+        
+        return idx
+    
+    
+    def quickselect(l, r, ks):
+        
+        if l == r:
+            return
+        
+        p = random.randint(l, r)
+        
+        p = partition(l, r, p)
+        
+        if ks == p:
+            return
+        elif ks < p:
+            quickselect(l, p-1, ks)
+        else:
+            quickselect(p+1, r, ks)
+    
+    n = len(u)
+    
+    quickselect(0, n-1, n-k)
+    
+    return u[n-k:]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
