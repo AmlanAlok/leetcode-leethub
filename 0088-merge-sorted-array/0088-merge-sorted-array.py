@@ -21,7 +21,7 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        return ans1(nums1, m, nums2, n)
+        return ans2(nums1, m, nums2, n)
     
 '''
 TC = m+n, SC = m
@@ -43,4 +43,34 @@ def ans1(nums1, m, nums2, n):
         k+=1
     
     return nums1
+
+
+def ans2(nums1, m, nums2, n):
+    
+    i = m+n-1   # last index
+    j, k = m-1, n-1
+    
+    while i>=0:
+        
+        if k<0 or (j>=0 and nums1[j] >= nums2[k]):
+            nums1[i] = nums1[j]
+            j-=1
+        # elif j<0 or (k>=0 and nums2[k] > nums1[j]):
+        #     nums1[i] = nums2[k]
+        #     k-=1
+        else:
+            nums1[i] = nums2[k]
+            k-=1
+        
+        i-=1
+    
+    return ans1
+    
+    
+    
+    
+    
+    
+    
+
         
