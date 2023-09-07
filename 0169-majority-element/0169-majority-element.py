@@ -4,9 +4,9 @@
 '''
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        return p1(nums)
+        return ans1(nums)
     
-def ans1(nums):
+def old1(nums):
     d={}
     
     for k in nums:
@@ -19,12 +19,15 @@ def ans1(nums):
     
     for k, v in d.items():
         if v > threshold:
-            max_k = k
+            max_k = k           # as the threshold is greater than half of length, we do not need to 
     
     return max_k
 
-
-def p1(nums):
+'''
+TC = n
+SC = n
+'''
+def ans1(nums):
     
     d = {}
     
@@ -34,10 +37,9 @@ def p1(nums):
         else:
             d[n] += 1
     
-    print(d)
     threshold = len(nums)/2
-    print(threshold)
     
     for k, v in d.items():
         if v > threshold:
             return k
+        
