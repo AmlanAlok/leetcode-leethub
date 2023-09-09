@@ -4,7 +4,7 @@
 '''
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        return ans1(nums)
+        return ans2(nums)
     
 def old1(nums):
     d={}
@@ -24,8 +24,7 @@ def old1(nums):
     return max_k
 
 '''
-TC = n
-SC = n
+TC = n, SC = n
 '''
 def ans1(nums):
     
@@ -43,3 +42,31 @@ def ans1(nums):
         if v > threshold:
             return k
         
+
+'''
+Boyer-Moore Voting Algo - This is the best answer
+TC = n, SC = 1
+'''
+def ans2(nums):
+
+    c = 0
+    p = None
+
+    for n in nums:
+        if c == 0:
+            p = n
+
+        c += (1 if p == n else -1)
+
+    return p
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
