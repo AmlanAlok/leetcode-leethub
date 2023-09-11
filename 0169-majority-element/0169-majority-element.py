@@ -24,6 +24,7 @@ def old1(nums):
     return max_k
 
 '''
+Hashmap
 TC = n, SC = n
 '''
 def ans1(nums):
