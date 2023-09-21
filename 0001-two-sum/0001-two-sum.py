@@ -108,7 +108,8 @@ def p6(nums, target):
         v = nums[i]
         x = target-v
         
-        if x in d and d[x] != i:
+        # if x in d and d[x] != i:
+        if x in d:
             return [d[x], i]
         else:
             d[v] = i
