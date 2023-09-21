@@ -8,8 +8,7 @@
 '''
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
-        return self.p5(nums, target)
+        return p6(nums, target)
     
     def p5(self, nums: List[int], t: int) -> List[int]:
         
@@ -101,5 +100,30 @@ class Solution:
         
         return [-1,-1]
             
+def p6(nums, target):
+    
+    d = {}
+    
+    for i in range(len(nums)):
+        v = nums[i]
+        x = target-v
+        
+        if x in d and d[x] != i:
+            return [d[x], i]
+        else:
+            d[v] = i
             
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
