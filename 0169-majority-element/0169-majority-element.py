@@ -4,7 +4,7 @@
 '''
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        return ans2(nums)
+        return p1(nums)
     
 def old1(nums):
     d={}
@@ -62,6 +62,22 @@ def ans2(nums):
     return p
     
     
+def p1(nums):
+    d = {}
+    for n in nums:
+        if n in d:
+            d[n] += 1
+        else:
+            d[n] = 1
+    
+    mx = None
+    mxk = None
+    for k, v in d.items():
+        if mx is None or v > mx:
+            mx = v
+            mxk = k
+    return mxk
+        
     
     
     
