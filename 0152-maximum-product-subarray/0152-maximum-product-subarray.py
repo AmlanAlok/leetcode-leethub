@@ -32,7 +32,11 @@ def failed_attempt(nums: List[int]) -> int:
         if m == -sys.maxsize:
             m = 0
         return m
-    
+
+'''
+DP
+TC = n, SC = 1
+'''
 def ans1(nums: List[int]) -> int:
         
     amax, amin = nums[0], nums[0]
