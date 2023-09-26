@@ -6,7 +6,7 @@
 '''
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return p3(nums)
+        return p4(nums)
     
 '''
 TC = n
@@ -88,6 +88,26 @@ def p3(nums):
             
     return mx
     
-        
+def p4(nums):
+    mx = nums[0]
+    t = 0
+    
+    for n in nums:
+        t += n
+        if n > t:
+            t = n
+        if t > mx:
+            mx = t
+            
+    return mx
+    
+    
+    
+    
+    
+    
+    
+    
+    
         
         
