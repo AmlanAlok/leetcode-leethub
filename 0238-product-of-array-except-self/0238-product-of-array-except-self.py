@@ -48,7 +48,7 @@ def ans2(nums):
     r = 1
     
     for i in reversed(range(l)):
-        print(i)
+        # print(i)
         ans[i] = ans[i] * r
         # print(r, nums[i])
         r = r*nums[i]
