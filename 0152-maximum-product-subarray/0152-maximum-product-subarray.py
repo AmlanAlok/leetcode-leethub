@@ -62,6 +62,10 @@ def p1(nums):
     mx = nums[0]
     mn = nums[0]
     
+    t = math.prod(nums)
+    if t > 0:
+        return t
+    
     for i in range(1, len(nums)):
         n = nums[i]
         
