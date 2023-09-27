@@ -1,3 +1,8 @@
+'''
+[2,1,3]
+[4,2,7,1,3,6,9]
+[]
+'''
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -6,7 +11,7 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        return ans1(root)
+        return p1(root)
     
 def ans1(root):
     
@@ -43,9 +48,25 @@ def ans2(root):
     
     return root
 
+def e1(root):
     
+    if root.left is None and root.right is None:        # this lines fails in [] case
+        return
+    if root.left:
+        p1(root.left)
+    if root.right:
+        p1(root.right)
+    
+    root.left, root.right = root.right, root.left
+    
+    return root
+
 '''
-[2,1,3]
-[4,2,7,1,3,6,9]
-[]
+Best answer yet
 '''
+def p1(root):
+    
+    if root:
+        root.left, root.right = p1(root.right), p1(root.left)
+    return root
+    
