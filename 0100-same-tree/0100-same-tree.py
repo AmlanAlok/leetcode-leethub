@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        return p1(p, q)
+        return p2(p, q)
     
 def ans1(p, q):
     
@@ -24,6 +24,19 @@ def ans1(p, q):
         return True
     return False
 
+def p1(p, q):
+    if p and q:
+        if p.val == q.val:
+            if p1(p.left, q.left) and p1(p.right, q.right):
+                return True
+            else:
+                return False
+        return False
+    if p == q:
+        return True
+
+    return False
+
 '''
 [1,2,3]
 [1,2,3]
@@ -35,14 +48,10 @@ def ans1(p, q):
 []
 '''
 
-def p1(p, q):
-    
+def p2(p, q):
     if p and q:
         if p.val == q.val:
-            if p1(p.left, q.left) and p1(p.right, q.right):
-                return True
-            else:
-                return False
+            return True if p1(p.left, q.left) and p1(p.right, q.right) else False
         return False
     if p == q:
         return True
