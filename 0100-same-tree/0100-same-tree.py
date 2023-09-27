@@ -19,8 +19,9 @@ def ans1(p, q):
             return ans1(p.left, q.left) and ans1(p.right, q.right)
 
         return False
-    # if p == q:
-    #     return True
+    # This if checks None == None and [] == []
+    if p == q:
+        return True
     return False
 
 '''
@@ -38,13 +39,10 @@ def p1(p, q):
     
     if p and q:
         if p.val == q.val:
-                x = p1(p.left, q.left)
-                y = p1(p.right, q.right)
-                
-                if x and y:
-                    return True
-                else:
-                    return False
+            if p1(p.left, q.left) and p1(p.right, q.right):
+                return True
+            else:
+                return False
         return False
     if p == q:
         return True
