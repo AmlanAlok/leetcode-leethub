@@ -6,6 +6,9 @@
 [1,1]
 [1]
 '''
+'''
+This is EASY if solution is mn, HARD is solution is m+n
+'''
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -30,6 +33,7 @@ def e1(root, subRoot):
         return True
     return False
 
+'''TC = mn, SC = n+m'''
 def ans1(root, subRoot):
     
     def dfs(node):
@@ -52,13 +56,3 @@ def ans1(root, subRoot):
                is_identical(node1.right, node2.right))
     
     return dfs(root)
-
-        
-        
-        
-        
-        
-        
-        
-        
-    
