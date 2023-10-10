@@ -22,6 +22,12 @@ def old1(self, s: str) -> int:
         else:
             a.append(c)
 
+'''
+TC = n
+SC = O(min(m, n))  = We need O(k). k is the size of dict or set.
+n is the length of string. worst case when all chars are unique.
+m are the num of chars in the alphabet.
+'''
 def ans1(s):
     
     i = j = 0
