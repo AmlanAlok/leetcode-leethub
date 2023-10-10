@@ -6,7 +6,7 @@
 '''
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        return ans1(s)
+        return ans2(s)
     
 def old1(self, s: str) -> int:  
     m = 0
@@ -48,5 +48,25 @@ def ans1(s):
         j += 1
     
     return ans
-            
+
+def ans2(s):
+    i = j = 0
+    d = {}
+    ans = 0
+    
+    while j <len(s):
+        c = s[j]
+        
+        if c in d and d[c] >= i:
+            i = d[c] + 1
+        else:
+            ans = max(ans, j-i+1)
+        
+        d[c] = j
+        j += 1
+    
+    return ans
+        
+        
+        
             
