@@ -8,7 +8,7 @@
 '''
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        return p6(nums, target)
+        return p7(nums, target)
     
     def p5(self, nums: List[int], t: int) -> List[int]:
         
@@ -113,7 +113,20 @@ def p6(nums, target):
             return [d[x], i]
         else:
             d[v] = i
-            
+
+def p7(nums, target):
+    
+    d = {}
+    
+    for i in range(len(nums)):
+        n = nums[i]
+        c = target - n
+        
+        if c in d:
+            return [i, d[c]]
+        else:
+            d[n] = i
+        
     
     
         
