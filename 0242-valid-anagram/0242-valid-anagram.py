@@ -8,7 +8,7 @@ from collections import Counter
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        return oct12(s, t)
+        return oct11(s, t)
     
     '''
     TC = n
@@ -42,7 +42,7 @@ class Solution:
         print(target)
         return True if source == target else False
 '''TC = n, SC = 1, My first attempt'''                
-def oct12(s, t):
+def oct11(s, t):
     
     if len(s) != len(t):
         return False
@@ -61,6 +61,8 @@ def oct12(s, t):
         if n != 0:
             return False
     return True
+
+
     
     
     
