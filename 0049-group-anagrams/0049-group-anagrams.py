@@ -71,7 +71,4 @@ def oct13(strs):
         else:
             z[new_k] = [st]
     
-    
-    ans = []
-    
     return z.values()
