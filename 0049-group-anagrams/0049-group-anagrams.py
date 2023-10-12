@@ -74,8 +74,4 @@ def oct13(strs):
     
     ans = []
     
-#     for k, v in z.items():
-#         ans.append(v)
-    
-#     return ans
     return z.values()
