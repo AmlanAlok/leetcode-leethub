@@ -12,7 +12,7 @@ class Solution:
 Dictionaries are ordered from Python 3.7 onwards
 I changed the logic to adjsut for unordered dictionaries.
 '''
-'''TC = n, SC = n'''
+'''TC = nk, SC = n'''
 def oct12(strs):
     
     z = {}
@@ -21,7 +21,7 @@ def oct12(strs):
         
         a = [0]*26
         
-        '''TC = O(100)'''
+        '''TC = O(100) or O(K)'''
         for c in st:
             idx = ord(c) - ord('a')
             # d[c] = d.get(c, 0) + 1
