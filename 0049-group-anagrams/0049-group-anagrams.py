@@ -48,4 +48,38 @@ def oct12(strs):
     
     return ans
         
-            
+
+def oct13(strs):
+    
+    z = {}
+    
+    for st in strs:
+        
+        a = [0]*26
+        
+        '''TC = O(100) or O(K)'''
+        for c in st:
+            idx = ord(c) - ord('a')
+            # d[c] = d.get(c, 0) + 1
+            a[idx] += 1
+        
+        new_k = tuple(a)
+        # for i in range(26):
+        #     ch = chr(97 + i)
+        #     new_k += ch + str(a[i])
+            # new_k += ord(k) + v
+        
+        # print(new_k)
+        if new_k in z:
+            z[new_k].append(st)
+            # print(z[new_k])
+        else:
+            z[new_k] = [st]
+    
+    
+    ans = []
+    
+    for k, v in z.items():
+        ans.append(v)
+    
+    return ans
