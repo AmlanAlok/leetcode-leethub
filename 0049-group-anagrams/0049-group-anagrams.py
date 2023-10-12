@@ -60,14 +60,9 @@ def oct13(strs):
         '''TC = O(100) or O(K)'''
         for c in st:
             idx = ord(c) - ord('a')
-            # d[c] = d.get(c, 0) + 1
             a[idx] += 1
         
         new_k = tuple(a)
-        # for i in range(26):
-        #     ch = chr(97 + i)
-        #     new_k += ch + str(a[i])
-            # new_k += ord(k) + v
         
         # print(new_k)
         if new_k in z:
@@ -79,7 +74,8 @@ def oct13(strs):
     
     ans = []
     
-    for k, v in z.items():
-        ans.append(v)
+#     for k, v in z.items():
+#         ans.append(v)
     
-    return ans
+#     return ans
+    return z.values()
