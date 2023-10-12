@@ -44,6 +44,9 @@ class Solution:
 '''TC = n, SC = 1, My first attempt'''                
 def oct12(s, t):
     
+    if len(s) != len(t):
+        return False
+    
     a = [0] * 26
     
     for c in s:
