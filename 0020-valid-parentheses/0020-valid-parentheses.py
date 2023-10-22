@@ -2,8 +2,7 @@ from collections import deque
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        
-        return self.p2(s)
+        return oct22(s)
     
     def ans1(self, s: str) -> bool:
         
@@ -52,5 +51,27 @@ class Solution:
             
         return len(a)==0
             
+def oct22(s):
+    st = deque()
+    
+    for c in s:
         
+        if st:
+            
+            x = c == ')' and st[-1] == '('
+            y = c == '}' and st[-1] == '{'
+            z = c == ']' and st[-1] == '['
+            
+            if x or y or z:
+                st.pop()
+                continue
+        
+        st.append(c)
+    
+    return len(st) == 0
+
+
+        
+    
+    
         
