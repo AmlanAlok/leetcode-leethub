@@ -18,6 +18,8 @@ where a.temperature > b.temperature;
 # where DATEDIFF(a.recordDate, b.recordDate) = 1
 # and a.temperature > b.temperature;
 
+
+
 -- Ans 4 (Does Not Work)
 # select a.id as Id
 # from weather a, weather b 
