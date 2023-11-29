@@ -1,5 +1,8 @@
 # Write your MySQL query statement below
 
+# 1. First, create the table by adding the default date
+# 2. Add ranks for all the visit dates for a specific user ID
+# 3. Join the table with itself with the condition of equal user ID and the date rank should be equal to date rank + 1
 
 with all_dates as (
     select user_id, visit_date
