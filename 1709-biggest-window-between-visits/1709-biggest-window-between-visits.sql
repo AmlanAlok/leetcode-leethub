@@ -1,25 +1,34 @@
 # Write your MySQL query statement below
 
-# 1. First, create the table by adding the default date
-# 2. Add ranks for all the visit dates for a specific user ID
-# 3. Join the table with itself with the condition of equal user ID and the date rank should be equal to date rank + 1
+# # Ans-1
+# # 1. First, create the table by adding the default date
+# # 2. Add ranks for all the visit dates for a specific user ID
+# # 3. Join the table with itself with the condition of equal user ID and the date rank should be equal to date rank + 1
 
-with all_dates as (
-    select user_id, visit_date
-    from UserVisits
-    union
-    select user_id, '2021-01-01' as `visit_date`
-    from UserVisits),
-rnk as (
-    select *, 
-    rank() over(partition by user_id order by visit_date) as date_rnk
-    from all_dates)
+# with all_dates as (
+#     select user_id, visit_date
+#     from UserVisits
+#     union
+#     select user_id, '2021-01-01' as `visit_date`
+#     from UserVisits),
+# rnk as (
+#     select *, 
+#     rank() over(partition by user_id order by visit_date) as date_rnk
+#     from all_dates)
 
-select a.user_id, MAX(DATEDIFF(b.visit_date, a.visit_date)) as biggest_window
-from rnk a
-join rnk b on a.user_id = b.user_id
-and b.date_rnk = a.date_rnk + 1
-group by a.user_id;
+# select a.user_id, MAX(DATEDIFF(b.visit_date, a.visit_date)) as biggest_window
+# from rnk a
+# join rnk b on a.user_id = b.user_id
+# and b.date_rnk = a.date_rnk + 1
+# group by a.user_id;
+
+
+
+# Ans-2
+select user_id, MAX(date_diff) as biggest_window
+from ( select user_id, visit_date,
+      datediff(ifnull(lead(visit_date, 1) over(partition by user_id order by visit_date), '2021-01-01'), visit_date) as date_diff from UserVisits) as a
+group by user_id;
 
 
 
