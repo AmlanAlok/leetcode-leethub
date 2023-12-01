@@ -111,8 +111,7 @@ class Solution:
         
     
 def p2(s):
-    print(string.ascii_lowercase)
-        
+
     i,j = 0, len(s)-1
     
     while i < j:
