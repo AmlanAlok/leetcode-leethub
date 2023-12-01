@@ -1,6 +1,7 @@
 import string
 
-accepted_char = string.ascii_lowercase + string.ascii_uppercase + string.digits
+# accepted_char = string.ascii_lowercase + string.ascii_uppercase + string.digits
+accepted_char = string.ascii_letters + string.digits
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
