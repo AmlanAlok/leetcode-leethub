@@ -1,3 +1,7 @@
+import string
+
+accepted_char = string.ascii_lowercase + string.ascii_uppercase + string.digits
+
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         return p2(s)
@@ -107,14 +111,15 @@ class Solution:
         
     
 def p2(s):
-    
+    print(string.ascii_lowercase)
+        
     i,j = 0, len(s)-1
     
     while i < j:
         
-        while i < j and not s[i].isalnum():
+        while i < j and not s[i] in accepted_char:
             i += 1
-        while i < j and not s[j].isalnum():
+        while i < j and not s[j] in accepted_char:
             j -= 1
         
         if s[i].lower() != s[j].lower():
