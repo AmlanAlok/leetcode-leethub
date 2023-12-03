@@ -1,8 +1,13 @@
+'''
+"()"
+"()[]{}"
+"(]"
+'''
 from collections import deque
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        return oct22(s)
+        return dec02(s)
     
     def ans1(self, s: str) -> bool:
         
@@ -70,8 +75,23 @@ def oct22(s):
     
     return len(st) == 0
 
-
+def dec02(s):
+    
+    st = deque()
+    
+    for c in s:
         
+        if st:
+            if (c == ')' and st[-1] == '(') \
+            or (c == '}' and st[-1] =='{') \
+            or (c == ']' and st[-1] == '['):
+                st.pop()
+                continue
+            
+        st.append(c)
+    
+    return len(st) == 0
+
     
     
         
