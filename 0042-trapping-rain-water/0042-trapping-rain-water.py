@@ -119,6 +119,16 @@ class Solution:
         
         return w
     
+    
+'''Two pointer, TC = n, SC = 1'''
+''' The idea is:
+1. Find the max elevation from left and right
+2. See which one is smaller
+3. Iterate further from the smaller side until you encounter a larger elevation.
+4. Save the diff in height which will be the water.
+5. Again compare the left_max and right_max
+6. Iterate inwards from the side which is smaller and save the diff in height which will be the water
+'''
 def dec06(height):
     
     left_max, right_max = 0, 0
