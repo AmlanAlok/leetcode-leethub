@@ -30,12 +30,13 @@ def dec07(mat, k):
     
     return ans
 
-''' TC = m*n, SC = 1 '''
+''' TC = m*n, SC = 1 (best answer)'''
 def dec08(mat, k):
     
     l, b = len(mat), len(mat[0])
     ans = []
     
+    # TC = m*n
     for j in range(b):
         for i in range(l):
         
@@ -49,6 +50,8 @@ def dec08(mat, k):
                         print(k)
                         return ans
     p = 0
+    
+    # TC = m
     while len(ans) < k and p < l:
         if mat[p][-1] == 1:
             ans.append(p)
