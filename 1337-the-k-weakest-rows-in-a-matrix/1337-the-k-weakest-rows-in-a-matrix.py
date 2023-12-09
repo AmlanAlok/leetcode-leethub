@@ -1,6 +1,12 @@
+'''
+[[1,0,0,0],[1,1,1,1],[1,0,0,0],[1,0,0,0]]
+2
+[[1,1,1,1,1,1],[1,1,1,1,1,1],[1,1,1,1,1,1]]
+1
+'''
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
-        return dec07(mat, k)
+        return dec08(mat, k)
 
 ''' TC = m*n+ m*log(m), SC = m'''
 def dec07(mat, k):
@@ -23,3 +29,30 @@ def dec07(mat, k):
         ans.append(v)
     
     return ans
+
+''' TC = m*n, SC = 1 '''
+def dec08(mat, k):
+    
+    l, b = len(mat), len(mat[0])
+    ans = []
+    
+    for j in range(b):
+        for i in range(l):
+        
+            n = mat[i][j]
+            
+            if n == 0:
+                if j == 0 or mat[i][j-1] == 1:
+                    ans.append(i)
+                    
+                    if len(ans) == k:
+                        print(k)
+                        return ans
+    p = 0
+    while len(ans) < k and p < l:
+        if mat[p][-1] == 1:
+            ans.append(p)
+        p += 1
+        
+    return ans
+         
