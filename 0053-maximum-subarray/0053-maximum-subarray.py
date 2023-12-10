@@ -8,10 +8,7 @@ class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         return p4(nums)
     
-'''
-TC = n
-SC = 1
-'''
+''' TC = n, SC = 1 '''
 def ans1(self, nums: List[int]) -> int:
 
     a = 0
@@ -27,11 +24,7 @@ def ans1(self, nums: List[int]) -> int:
 
     return m
 
-'''
-TC = n
-SC = 1
-ans1 is better solution as it does not use else
-'''
+''' TC = n, SC = 1, ans1 is better solution as it does not use else '''
 def p1(self, nums: List[int]) -> int:
 
     maxv = -sys.maxsize
@@ -49,10 +42,7 @@ def p1(self, nums: List[int]) -> int:
 
     return maxv
 
-'''
-TC = n
-SC = 1
-'''
+''' TC = n, SC = 1 '''
 def p2(self, nums: List[int]) -> int:
 
     t = 0
@@ -69,10 +59,7 @@ def p2(self, nums: List[int]) -> int:
 
     return m
         
-'''
-Kadane's Algo
-TN = n, SC = 1
-'''
+''' Kadane's Algo, TN = n, SC = 1 '''
 def p3(nums):
     
     mx = nums[0]
