@@ -40,7 +40,6 @@ def dec15(nums):
     
     return best
 
-     
 ''' TC = n, SC = 1 '''
 def ans1(self, nums: List[int]) -> int:
 
@@ -120,4 +119,3 @@ def p4(nums):
             mx = t
             
     return mx  
-        
