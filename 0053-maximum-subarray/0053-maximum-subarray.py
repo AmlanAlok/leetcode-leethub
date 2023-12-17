@@ -9,7 +9,21 @@ class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         return dec16(nums)
 
+''' TC = n, SC = 1'''
 def dec16(nums):
+    t = 0
+    mx = nums[0]
+    
+    for n in nums:
+        t += n
+        
+        t = max(t, n)
+        mx = max(mx, t)
+    
+    return mx
+
+''' TC = n, SC = 1'''
+def dec15(nums):
     
     t = 0
     best = nums[0]
@@ -17,10 +31,14 @@ def dec16(nums):
     for n in (nums):
         t += n
         
-        if n > t:
-            t = n
-        if t > best:
-            best = t
+        # if n > t:
+        #     t = n
+        t = max(t, n)
+        # if t > best:
+        #     best = t
+        
+        best = max(best, t)
+        # best = best if best > t else t
     
     return best
 
@@ -103,5 +121,5 @@ def p4(nums):
         if t > mx:
             mx = t
             
-    return mx 
+    return mx  
         
