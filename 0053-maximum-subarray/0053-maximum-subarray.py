@@ -93,6 +93,7 @@ def p2(self, nums: List[int]) -> int:
 
     return m
 
+''' Divide & Conquer, TC = n log(n), SC = log(n)'''
 def dec17(nums):
     
     def helper(nums, left, right):
