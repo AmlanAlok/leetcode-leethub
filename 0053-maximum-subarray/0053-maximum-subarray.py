@@ -31,13 +31,11 @@ def dec15(nums):
     for n in (nums):
         t += n
         
-        # if n > t:
-        #     t = n
-        t = max(t, n)
-        # if t > best:
-        #     best = t
-        
-        best = max(best, t)
+        if n > t:
+            t = n
+        if t > best:
+            best = t
+
         # best = best if best > t else t
     
     return best
