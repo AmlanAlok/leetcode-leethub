@@ -5,11 +5,13 @@
 [1,2]
 [-1]
 '''
+import sys
+
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return dec16(nums)
+        return dec17(nums)
 
-''' TC = n, SC = 1'''
+''' Kadane's Algo, TC = n, SC = 1'''
 def dec16(nums):
     t = 0
     mx = nums[0]
@@ -22,7 +24,7 @@ def dec16(nums):
     
     return mx
 
-''' TC = n, SC = 1'''
+''' Kadane's Algo, TC = n, SC = 1'''
 def dec15(nums):
     
     t = 0
@@ -90,32 +92,38 @@ def p2(self, nums: List[int]) -> int:
             m = t
 
     return m
-        
-''' Kadane's Algo, TN = n, SC = 1 '''
-def p3(nums):
-    
-    mx = nums[0]
-    t = 0
-    
-    for n in nums:
-        t += n
-        
-        if n > t:
-            t = n
-        if t > mx:
-            mx = t
-            
-    return mx
 
-def p4(nums):
-    mx = nums[0]
-    t = 0
+def dec17(nums):
     
-    for n in nums:
-        t += n
-        if n > t:
-            t = n
-        if t > mx:
-            mx = t
+    def helper(nums, left, right):
+        
+        if left > right:
+            return -sys.maxsize
+        
+        mid = (left + right) // 2
+        
+        mx_left = 0
+        mx_right = 0
+        
+        cur = 0
+        
+        for i in range(mid-1, left-1, -1):
+            cur += nums[i]
+            mx_left = max(mx_left, cur)
+        
+        cur = 0
+        
+        for i in range(mid+1, right+1):
+            cur += nums[i]
+            mx_right = max(mx_right, cur)
             
-    return mx  
+        mx_total = mx_left + nums[mid] + mx_right
+        
+        left_half = helper(nums, left, mid-1)
+        right_half = helper(nums, mid+1, right)
+        
+        return max(mx_total, left_half, right_half)
+    
+    return helper(nums, 0, len(nums)-1)
+        
+        
