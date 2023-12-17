@@ -3,11 +3,28 @@
 [5,4,-1,7,8]
 [1]
 [1,2]
+[-1]
 '''
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return p4(nums)
+        return dec16(nums)
+
+def dec16(nums):
     
+    t = 0
+    best = nums[0]
+    
+    for n in (nums):
+        t += n
+        
+        if n > t:
+            t = n
+        if t > best:
+            best = t
+    
+    return best
+
+     
 ''' TC = n, SC = 1 '''
 def ans1(self, nums: List[int]) -> int:
 
@@ -74,7 +91,7 @@ def p3(nums):
             mx = t
             
     return mx
-    
+
 def p4(nums):
     mx = nums[0]
     t = 0
@@ -86,15 +103,5 @@ def p4(nums):
         if t > mx:
             mx = t
             
-    return mx
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        
+    return mx 
         
