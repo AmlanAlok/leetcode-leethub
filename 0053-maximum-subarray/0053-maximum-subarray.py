@@ -9,7 +9,7 @@ import sys
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return dec17(nums)
+        return dec16(nums)
 
 ''' Kadane's Algo, TC = n, SC = 1'''
 def dec16(nums):
