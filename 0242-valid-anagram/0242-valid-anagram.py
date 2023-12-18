@@ -8,8 +8,28 @@ from collections import Counter
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        return dec17(s, t)
+        return dec18(s, t)
+ 
+def dec18(s, t):
     
+    if len(s) != len(t):
+        return False
+    
+    d = {}
+    
+    for c in s:
+        d[c] = d.get(c, 0) + 1
+    
+    for c in t:
+        d[c] = d.get(c, 0) - 1
+        
+    for k,v in d.items():
+        if v != 0:
+            return False
+        
+    return True
+    
+'''I like this'''
 def dec17(s, t):
     
     if len(s) != len(t):
