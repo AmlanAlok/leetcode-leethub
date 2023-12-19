@@ -55,7 +55,7 @@ def ans1(s: str, k: int) -> int:
     return m
 
 def dec18(s, k):
-    ''' TC = n, SC = k+1'''
+    ''' TC = n, SC = k'''
     l = len(s)
     i = j = 0
     d = {}
@@ -87,7 +87,3 @@ def dec18(s, k):
             
     return mx
     
-        
-        
-        
-        
