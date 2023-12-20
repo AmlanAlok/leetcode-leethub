@@ -118,6 +118,7 @@ def dec19(s, k):
 '''Best'''
 def dec20(s, k):
     '''Best solution but took time to see it'''
+    '''If you already have a mx value of say 4, it makes no sense to compute for windows less than 4 anymore. So it optimizes the solution'''
     '''TC = n, SC = k'''
     j = 0
     d = {}
