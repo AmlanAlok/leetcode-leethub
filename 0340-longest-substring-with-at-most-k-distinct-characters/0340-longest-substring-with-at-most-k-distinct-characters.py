@@ -17,7 +17,7 @@
 
 class Solution:
     def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
-        return dec18(s, k)
+        return dec20(s, k)
     
 
 def ans1(s: str, k: int) -> int:
@@ -86,4 +86,57 @@ def dec18(s, k):
             i += 1
             
     return mx
+    
+def dec19(s, k):
+    ''' TC = n, SC = k'''
+    l = len(s)
+    i = j = 0
+    mx = 0
+    d = {}
+    
+    while j < l:
+        c = s[j]
+        
+        d[c] = d.get(c, 0) + 1
+        
+        while i < l and len(d) > k:
+            z = s[i]
+            d[z] -= 1
+            if d[z] == 0:
+                del d[z]
+            i += 1
+        
+        st_len = j-i+1
+        
+        # if len(d) <= k:
+        mx = max(mx, st_len)
+        
+        j += 1
+        
+    return mx
+    
+'''Best'''
+def dec20(s, k):
+    '''Best solution but took time to see it'''
+    '''TC = n, SC = k'''
+    j = 0
+    d = {}
+    mx = 0
+    
+    for j in range(len(s)):
+        c = s[j]
+        
+        d[c] = d.get(c, 0) + 1
+        
+        if len(d) <= k:
+            mx += 1
+        else:
+            i = j - mx
+            z = s[i]
+            d[z] -= 1
+            if d[z] == 0:
+                del d[z]
+    return mx
+        
+        
     
