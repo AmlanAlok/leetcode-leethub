@@ -15,27 +15,4 @@ img
 ​
 However, we don't need to decrease the size of the window.
 ​
-If we have already found a window of length max_size, then what we need to do next is to search for a larger valid window, for example, a window with length max_size + 1. Therefore, in the following sliding window process, even if the current window with size max_size is not valid, there is no problem, because we have already found a window of length max_size before, so we may as well continue looking for a larger window.
-​
-​
-Understanding this, we can simplify the solution in approach 2:
-​
-Again, we use a hash map counter to keep track of the frequency of each letter in the current window. When we increase the window length by 1, we need to increase the count of the character at the current right boundary counter[s[right]] by 1.
-​
 img
-​
-If the expanded window is still valid, it means that we get a larger valid window with length max_size + 1 (from 2 to 3). We can continue to move the boundary right.
-​
-img img
-​
-However, if the expanded window is invalid, we only need to remove the leftmost character in the window to keep the window length still at max_size (from 4 to 3), that is, decrease counter[s[right - max_size]] by 1.
-​
-Similiarly, we delete the key s[i] from counter if counter[s[i]] = 0.
-​
-img
-​
-Since the expanded window of length 4 was invalid, we removed a character from the leftmost side of the window to make its length 3 again. Although the current window is still invalid, we don't need to keep shrinking it because we have previously found a valid window of length 3. We can continue to shift the boundary right to try the next window of size 4.
-​
-img
-​
-Once this iteration is over, max_size represents the maximum size of the valid window.
