@@ -3,10 +3,12 @@
 "bbbbb"
 "pwwkew"
 "abba"
+"abcdeafbdgcbb"
+" "
 '''
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        return ans2(s)
+        return dec20(s)
     
 def old1(self, s: str) -> int:  
     m = 0
@@ -22,14 +24,13 @@ def old1(self, s: str) -> int:
         else:
             a.append(c)
 
-'''
-TC = n
-SC = O(min(m, n))  = We need O(k). k is the size of dict or set.
-n is the length of string. worst case when all chars are unique.
-m are the num of chars in the alphabet.
-'''
 def ans1(s):
-    
+    '''
+    TC = n
+    SC = O(min(m, n))  = We need O(k). k is the size of dict or set.
+    n is the length of string. worst case when all chars are unique.
+    m are the num of chars in the alphabet.
+    '''
     i = j = 0
     d = {}
     ans = 0
@@ -67,6 +68,45 @@ def ans2(s):
     
     return ans
         
+def dec20(s):
+    
+    # s.strip()
+    
+    i = j = 0
+    d = {}
+    mx = 0
+    
+    for j in range(len(s)):
         
+        c = s[j]
         
+        if c not in d:
+            d[c] = j
+        else:
+            i = max(d[c]+1, i)
+            d[c] = j
+            
+        mx = max(mx, j-i+1)
+        
+    return mx
+        
+        # if c in d:
+        #     mx += 1
+        # else:
+        #     mx = 1
+        #     d = 
+        # j += 1
+            
+        
+        # if d[c] == 1:
+        #     mx += 1
+        # else:
+        #     i = j - mx
+        #     z = s[i]
+        #     d[z] -= 1
+        #     if d[z] == 0:
+        #         del d[z]
+                
+    # return mx
+
             
