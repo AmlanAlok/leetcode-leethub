@@ -3,6 +3,7 @@
 [0,1,2,2]
 [1,2,3,2,2]
 [3,3,3,1,2,1,1,2,3,3,4]
+[0,1,2,3,4,5,6,7]
 '''
 
 class Solution:
@@ -47,7 +48,7 @@ def ans1(nums: List[int]) -> int:
     return m
 
 def dec20(nums):
-    
+    ''' TC = n, SC = k+1 where k is the maximum window size '''
     j = 0
     d = {}
     mx = 0
