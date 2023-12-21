@@ -70,8 +70,6 @@ def ans2(s):
         
 def dec20(s):
     
-    # s.strip()
-    
     i = j = 0
     d = {}
     mx = 0
@@ -86,27 +84,12 @@ def dec20(s):
             i = max(d[c]+1, i)
             d[c] = j
             
-        mx = max(mx, j-i+1)
+        mx = max(mx, j-i+1) # this +1 helped to resolve " " case
+        '''
+        It corrects the +1 added earlier to i
+        If all chars are unique, the +1 gives the length with 0-indexed arrays
+        '''
         
     return mx
-        
-        # if c in d:
-        #     mx += 1
-        # else:
-        #     mx = 1
-        #     d = 
-        # j += 1
-            
-        
-        # if d[c] == 1:
-        #     mx += 1
-        # else:
-        #     i = j - mx
-        #     z = s[i]
-        #     d[z] -= 1
-        #     if d[z] == 0:
-        #         del d[z]
-                
-    # return mx
 
             
