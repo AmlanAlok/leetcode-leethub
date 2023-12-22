@@ -1,6 +1,6 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        return ans2(s, k)
+        return dec21(s, k)
     
 def ans1(s, k):
     d = {}
@@ -49,5 +49,23 @@ def ans2(s, k):
     return res
 
 def dec21(s, k):
-    pass
+    
+    i = j = 0
+    d = {}
+    mx = 0
+    
+    for j in range(len(s)):
+        c = s[j]
+        
+        d[c] = d.get(c, 0) + 1
+        
+        if (j-i+1) - max(d.values()) > k:
+            z = s[i]
+            d[z] -= 1
+            i += 1
+        
+        mx = max(mx, (j-i+1))
+    
+    return mx
+    
         
