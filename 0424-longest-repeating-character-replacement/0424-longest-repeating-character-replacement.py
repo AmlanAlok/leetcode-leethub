@@ -33,7 +33,8 @@ def ans2(s, k):
     So maxf value decreases later, the valid window length will also decrese, but we only care about the max window length. 
     So for mathematically covering all the scenarios and then finding the max window length, changing the maxf to lower it is important.
     But if you only want the longest window length, then you only care about the maxf scenario. So you just increase maxf value in every iteration. 
-    The ans for longest substring will come when maxf is maximum. For anything not max value, the window length will also be lower which we do not care about.  
+    The ans for longest substring will come when maxf is maximum. For anything not max value, the window length will also be lower which we do not care about.
+    So you can skip unnecessary calculations.
     '''
     
     d = {}
