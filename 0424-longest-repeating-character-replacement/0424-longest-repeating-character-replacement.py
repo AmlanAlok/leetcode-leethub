@@ -1,3 +1,6 @@
+'''
+https://leetcode.com/problems/longest-repeating-character-replacement/discuss/4443411/Explaining-intuition-behind-why-lowering-the-max_frequency-is-not-required
+'''
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         return dec22(s, k)
