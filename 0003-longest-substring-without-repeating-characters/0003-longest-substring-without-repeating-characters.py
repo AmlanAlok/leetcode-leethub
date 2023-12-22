@@ -8,7 +8,7 @@
 '''
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        return dec20(s)
+        return dec22(s)
     
 def old1(self, s: str) -> int:  
     m = 0
@@ -78,11 +78,28 @@ def dec20(s):
         
         c = s[j]
         
-        # if c not in d:
-        #     d[c] = j
-        # else:
-        #     i = max(d[c]+1, i)
-        #     d[c] = j
+        if c not in d:
+            d[c] = j
+        else:
+            i = max(d[c]+1, i)
+            d[c] = j
+            
+        mx = max(mx, j-i+1) # this +1 helped to resolve " " case
+        '''
+        It corrects the +1 added earlier to i
+        If all chars are unique, the +1 gives the length with 0-indexed arrays
+        '''
+        
+    return mx
+
+def dec22(s):
+    
+    i = j = 0
+    d = {}
+    mx = 0
+    
+    for j in range(len(s)):
+        c = s[j]
         
         if c in d:
             i = max(d[c]+1, i)
@@ -95,5 +112,7 @@ def dec20(s):
         '''
         
     return mx
+
+
 
             
