@@ -78,11 +78,15 @@ def dec20(s):
         
         c = s[j]
         
-        if c not in d:
-            d[c] = j
-        else:
+        # if c not in d:
+        #     d[c] = j
+        # else:
+        #     i = max(d[c]+1, i)
+        #     d[c] = j
+        
+        if c in d:
             i = max(d[c]+1, i)
-            d[c] = j
+        d[c] = j
             
         mx = max(mx, j-i+1) # this +1 helped to resolve " " case
         '''
