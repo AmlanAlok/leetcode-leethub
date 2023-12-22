@@ -109,6 +109,8 @@ def dec22(s):
         '''
         It corrects the +1 added earlier to i
         If all chars are unique, the +1 gives the length with 0-indexed arrays
+        
+        The current value of i is where the last duplication occurred. So any new valid string will have to start after it.
         '''
         
     return mx
