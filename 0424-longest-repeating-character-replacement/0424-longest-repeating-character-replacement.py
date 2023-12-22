@@ -1,6 +1,6 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        return ans1(s, k)
+        return ans2(s, k)
     
 def ans1(s, k):
     d = {}
@@ -23,7 +23,6 @@ def ans1(s, k):
         r += 1
     
     return res
-
 
 def ans2(s, k):
     d = {}
@@ -48,4 +47,7 @@ def ans2(s, k):
         r += 1
     
     return res
+
+def dec21(s, k):
+    pass
         
