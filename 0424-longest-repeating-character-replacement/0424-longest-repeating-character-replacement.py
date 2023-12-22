@@ -44,7 +44,7 @@ def ans2(s, k):
         
         res = max(res, (r-l+1))
         
-        r += 1
+        # r += 1
     
     return res
 
