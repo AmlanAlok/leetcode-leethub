@@ -8,79 +8,96 @@
 '''
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        return p7(nums, target)
+        return dec22(nums, target)
     
-    def p5(self, nums: List[int], t: int) -> List[int]:
+def dec22(nums, t):
+    d = {}
+    
+    for i in range(len(nums)):
+        n = nums[i]
         
-        d = {}
+        v = t - n
         
-        for i in range(len(nums)):
+        if v in d:
+            return [d[v], i]
+        else:
+            d[n] = i
+    
+    return []
+    
+    
+    
+#     def p5(self, nums: List[int], t: int) -> List[int]:
+        
+#         d = {}
+        
+#         for i in range(len(nums)):
             
-            v = nums[i]
-            c = t - v
+#             v = nums[i]
+#             c = t - v
             
-            if c in d and i != d[c]:
-                return [d[c], i]
-            else:
-                d[v] = i
+#             if c in d and i != d[c]:
+#                 return [d[c], i]
+#             else:
+#                 d[v] = i
         
 
-    def p4(self, nums: List[int], t: int) -> List[int]:
+#     def p4(self, nums: List[int], t: int) -> List[int]:
         
-        d = {}
+#         d = {}
 
-        for i in range(len(nums)):
-            v = nums[i]
+#         for i in range(len(nums)):
+#             v = nums[i]
 
-            if t-v in d and i is not d[t-v]:
-                return [i, d[t-v]]
-            else:
-                d[v] = i
+#             if t-v in d and i is not d[t-v]:
+#                 return [i, d[t-v]]
+#             else:
+#                 d[v] = i
         
-        return []
+#         return []
 
     
-    def ans_1(self, nums: List[int], target: int) -> List[int]:
+#     def ans_1(self, nums: List[int], target: int) -> List[int]:
         
-        dict = {v:i for i,v in enumerate(nums)}
+#         dict = {v:i for i,v in enumerate(nums)}
         
-        for i in range(len(nums)):
+#         for i in range(len(nums)):
             
-            c = target-nums[i]
-            if c in dict and i is not dict[c]:
-                return [i, dict[c]]
+#             c = target-nums[i]
+#             if c in dict and i is not dict[c]:
+#                 return [i, dict[c]]
             
-        return False
+#         return False
         
-    def p1(self, nums: List[int], target: int) -> List[int]:
+#     def p1(self, nums: List[int], target: int) -> List[int]:
         
-        d = {}
+#         d = {}
         
-        for i,v in enumerate(nums):
+#         for i,v in enumerate(nums):
             
-            c= target-v
+#             c= target-v
             
-            if c in d and d[c] != i:
-                return [i, d[c] ]
-            else:
-                d[v] = i
+#             if c in d and d[c] != i:
+#                 return [i, d[c] ]
+#             else:
+#                 d[v] = i
         
-        return []
+#         return []
             
-    def p2(self, nums: List[int], target: int) -> List[int]:
+#     def p2(self, nums: List[int], target: int) -> List[int]:
         
-        d = {}
+#         d = {}
         
-        for i in range(nums):
+#         for i in range(nums):
             
-            c= target-v
+#             c= target-v
             
-            if c in d and d[c] != i:
-                return [i, d[c] ]
-            else:
-                d[v] = i
+#             if c in d and d[c] != i:
+#                 return [i, d[c] ]
+#             else:
+#                 d[v] = i
         
-        return []
+#         return []
     
     '''
     TC = n
