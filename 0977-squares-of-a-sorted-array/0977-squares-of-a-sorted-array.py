@@ -24,7 +24,7 @@ def ans1(nums):
     return ans
     
 def dec26(nums):
-    
+    '''TC=n, SC = 1'''
     l = len(nums)
     ans = [None] * l
     
