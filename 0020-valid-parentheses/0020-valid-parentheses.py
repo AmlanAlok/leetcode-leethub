@@ -7,7 +7,7 @@ from collections import deque
 
 class Solution:
     def isValid(self, s: str) -> bool:
-        return dec02(s)
+        return dec27(s)
     
     def ans1(self, s: str) -> bool:
         
@@ -92,6 +92,22 @@ def dec02(s):
     
     return len(st) == 0
 
+def dec27(s):
     
+    stack = deque()
     
+    for c in s:
+        
+        if stack:
+            b1 = c == ')' and stack[-1] == '('
+            b2 = c == '}' and stack[-1] == '{'
+            b3 = c == ']' and stack[-1] == '['
+            
+            if b1 or b2 or b3:
+                stack.pop()
+                continue
+        
+        stack.append(c)
+    
+    return len(stack) == 0
         
