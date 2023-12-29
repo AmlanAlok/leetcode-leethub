@@ -47,11 +47,6 @@ def dec27(nums):
                 while i < j and nums[i] == second:
                     i += 1
                 
-                # while i < j and nums[j] == third:
-                #     j -= 1
-            
-
-                
         prev_first = first
     
     return ans
