@@ -40,6 +40,9 @@ def dec27(nums):
             else:
                 ans.append([first, second, third])
                 
+                i += 1
+                j -= 1
+                
                 while i < j and nums[i] == second:
                     i += 1
                 
