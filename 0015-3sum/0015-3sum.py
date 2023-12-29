@@ -8,7 +8,8 @@
 '''
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        return dec27(nums)
+        # return dec27(nums)
+        return ans1(nums)
 
 def dec27(nums):
     '''TC'''
@@ -84,7 +85,7 @@ def dec26(nums):
     return ans
                 
     
-def ans1(self, nums: List[int]) -> List[List[int]]:
+def ans1(nums: List[int]) -> List[List[int]]:
     '''
     A1 - 2 pointers
     This approach is the fastest as it skips duplicates
