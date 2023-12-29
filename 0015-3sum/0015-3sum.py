@@ -46,24 +46,13 @@ def dec27(nums):
                 # while i < j and nums[j] == third:
                 #     j -= 1
             
-#             if total < 0:
-#                 while i < j and nums[i] == second:
-#                     i += 1
-#             elif total > 0:
-#                  while i < j and nums[j] == third:
-#                     j -= 1
-#             else:
-#                 ans.append([first, second, third])
-                
-#                 while i < j and nums[i] == second:
-#                     i += 1
-                
-#                 while i < j and nums[j] == third:
-#                     j -= 1
+
                 
         prev_first = first
     
     return ans
+
+
         
 def dec26(nums):
     '''TC = n2, SC = '''
@@ -387,8 +376,23 @@ def p2(self, nums: List[int]) -> List[List[int]]:
 
     return ans
             
+
+'''Adding all this while conditions increases time'''
                 
+#             if total < 0:
+#                 while i < j and nums[i] == second:
+#                     i += 1
+#             elif total > 0:
+#                  while i < j and nums[j] == third:
+#                     j -= 1
+#             else:
+#                 ans.append([first, second, third])
                 
+#                 while i < j and nums[i] == second:
+#                     i += 1
+                
+#                 while i < j and nums[j] == third:
+#                     j -= 1
                 
                 
                 
