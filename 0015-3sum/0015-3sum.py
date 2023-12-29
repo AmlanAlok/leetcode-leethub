@@ -8,8 +8,8 @@
 '''
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        # return dec27(nums)
-        return ans1(nums)
+        return dec27(nums)
+        # return ans1(nums)
 
 def dec27(nums):
     '''TC'''
@@ -34,19 +34,32 @@ def dec27(nums):
             total = first + second + third
             
             if total < 0:
-                while i < j and nums[i] == second:
-                    i += 1
+                i += 1
             elif total > 0:
-                 while i < j and nums[j] == third:
-                    j -= 1
+                j -= 1
             else:
                 ans.append([first, second, third])
                 
                 while i < j and nums[i] == second:
                     i += 1
                 
-                while i < j and nums[j] == third:
-                    j -= 1
+                # while i < j and nums[j] == third:
+                #     j -= 1
+            
+#             if total < 0:
+#                 while i < j and nums[i] == second:
+#                     i += 1
+#             elif total > 0:
+#                  while i < j and nums[j] == third:
+#                     j -= 1
+#             else:
+#                 ans.append([first, second, third])
+                
+#                 while i < j and nums[i] == second:
+#                     i += 1
+                
+#                 while i < j and nums[j] == third:
+#                     j -= 1
                 
         prev_first = first
     
