@@ -5,6 +5,7 @@
 [-1,0,1,2,-1,-4,2]
 [-4,2,2]
 [0,0,0,0]
+[-2,0,0,2,2]
 '''
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
