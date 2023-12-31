@@ -10,7 +10,31 @@
 '''
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        return dec18(target, nums)
+        return dec31(target, nums)
+    
+def dec31(target, nums):
+    
+    l = len(nums)
+    mini = sys.maxsize
+    total = 0
+    
+    i = 0
+    j = 0
+    
+    while j < l:
+        
+        while total < target and j < l:
+            total += nums[j]
+            j += 1
+        
+        while total >= target and i < l:
+            mini = min(mini, j-i)
+            total -= nums[i]
+            i += 1
+            
+    return 0 if mini == sys.maxsize else mini
+        
+    
     
 ''' Two Pointer/ Sliding Window, TC = n, SC = 1 '''
 def ans1(target: int, nums: List[int]) -> int:
@@ -47,6 +71,7 @@ def ans2(target: int, nums: List[int]) -> int:
         right += 1
     return res if res <= len(nums) else 0 
 
+''' Two Pointer/ Sliding Window, TC = n, SC = 1 '''
 def dec18(target, nums):
     
     l = len(nums)
@@ -61,7 +86,7 @@ def dec18(target, nums):
             j += 1
             
         while s >= target and  i < l:
-            mini = min(mini, j-i)
+            mini = min(mini, j-i)   # there is no +1 bcuz j's value of 1 greater than the position we are looking for
             s -= nums[i]
             i += 1
             
