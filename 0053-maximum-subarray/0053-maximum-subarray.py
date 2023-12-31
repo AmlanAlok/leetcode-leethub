@@ -9,8 +9,21 @@ import sys
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return dec16(nums)
-
+        return dec31(nums)
+    
+def dec31(nums):
+    
+    t = 0
+    maxi = nums[0]
+    
+    for n in nums:
+        t += n
+        
+        t = max(t, n)
+        maxi = max(maxi, t)
+    
+    return maxi
+    
 ''' Kadane's Algo, TC = n, SC = 1'''
 def dec16(nums):
     t = 0
