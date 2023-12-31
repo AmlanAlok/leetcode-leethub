@@ -33,11 +33,9 @@ def dec31(target, nums):
             i += 1
             
     return 0 if mini == sys.maxsize else mini
-        
-    
-    
-''' Two Pointer/ Sliding Window, TC = n, SC = 1 '''
+          
 def ans1(target: int, nums: List[int]) -> int:
+    ''' Two Pointer/ Sliding Window, TC = n, SC = 1 '''
     
     m = sys.maxsize
     i = j = s = 0
@@ -71,8 +69,8 @@ def ans2(target: int, nums: List[int]) -> int:
         right += 1
     return res if res <= len(nums) else 0 
 
-''' Two Pointer/ Sliding Window, TC = n, SC = 1 '''
 def dec18(target, nums):
+    ''' Two Pointer/ Sliding Window, TC = n, SC = 1 '''
     
     l = len(nums)
     i = j = 0
