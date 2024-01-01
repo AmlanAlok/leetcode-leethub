@@ -8,7 +8,28 @@
 '''
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        return dec22(s)
+        return dec31(s)
+
+    
+def dec31(s):
+    
+    maxi = 0
+    l = len(s)
+    d = {}
+    i = 0
+    
+    for j in range(l):
+        
+        c = s[j]
+        
+        if c in d:
+            i = max(d[c]+1, i)
+        
+        maxi = max(maxi, j-i+1)
+        d[c] = j
+    
+    return maxi    
+    
     
 def old1(self, s: str) -> int:  
     m = 0
