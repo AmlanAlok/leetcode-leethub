@@ -9,7 +9,7 @@ import sys
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return dec31(nums)
+        return p(nums)
     
 def dec31(nums):
     
@@ -140,5 +140,21 @@ def p2(self, nums: List[int]) -> int:
 
     return m
 
+def p(nums):
+    
+    maxi = -sys.maxsize
+    t = 0
+    
+    for n in nums:
+        t += n
         
+        t = max(t, n)
+        maxi = max(maxi, t)
+    
+    return maxi
         
+    
+    
+    
+    
+
