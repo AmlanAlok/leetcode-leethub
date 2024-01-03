@@ -1,3 +1,8 @@
+'''
+[1,null,2,3]
+[1,2,3,4,5,6,7]
+'''
+from collections import deque
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -41,3 +46,7 @@ def jan1(root):
         return []
     
     return jan1(root.left) + jan1(root.right) + [root.val]
+
+        
+    
+    
