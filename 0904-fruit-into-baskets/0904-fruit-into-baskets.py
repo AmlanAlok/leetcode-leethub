@@ -87,7 +87,7 @@ def error_dec20(nums):
     return s[0]
         
 def p(fruits):
-    
+    '''TC = n, SC = k+1'''
     l = len(fruits)
     d = {}
     i = 0
