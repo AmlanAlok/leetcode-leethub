@@ -9,9 +9,54 @@
 '''
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        return dec27(nums)
+        return p(nums)
         # return ans1(nums)
 
+def p(nums):
+    
+    nums.sort()
+    l = len(nums)
+    ans = []
+    
+    last_k_val = None
+    
+    for k in range(l-2):
+        
+        first = nums[k]
+        
+        if first == last_k_val:
+            continue
+            
+        i = k+1
+        j = l-1
+        
+        while i < j:
+            sec, third = nums[i], nums[j]
+
+            s = first + sec + third
+            
+            if s == 0:
+                ans.append([first, sec, third])
+                
+                i+=1
+                j-=1
+                
+                while i < j and nums[i] == sec:
+                    i+=1
+                
+            elif s < 0:
+                while i < j and nums[i] == sec:
+                    i += 1
+            elif s > 0:
+                while j > i and nums[j] == third:
+                    j -= 1
+        
+        last_k_val = nums[k]
+        
+    return ans
+        
+        
+        
 def dec27(nums):
     '''TC'''
     
@@ -51,8 +96,6 @@ def dec27(nums):
     
     return ans
 
-
-        
 def dec26(nums):
     '''TC = n2, SC = '''
     l = len(nums)
