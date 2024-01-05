@@ -9,10 +9,10 @@
 '''
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        return p(nums)
+        return jan5(nums)
         # return ans1(nums)
 
-def p(nums):
+def jan5(nums):
     
     nums.sort()
     l = len(nums)
