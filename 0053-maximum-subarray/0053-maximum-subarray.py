@@ -9,7 +9,8 @@ import sys
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        return p(nums)
+        # return p(nums)
+        return z(nums)
     
 def dec31(nums):
     
@@ -24,8 +25,9 @@ def dec31(nums):
     
     return maxi
     
-''' Kadane's Algo, TC = n, SC = 1'''
+
 def dec16(nums):
+    ''' Kadane's Algo, TC = n, SC = 1'''
     t = 0
     mx = nums[0]
     
@@ -37,9 +39,9 @@ def dec16(nums):
     
     return mx
 
-''' Kadane's Algo, TC = n, SC = 1'''
+
 def dec15(nums):
-    
+    ''' Kadane's Algo, TC = n, SC = 1'''
     t = 0
     best = nums[0]
     
@@ -55,9 +57,9 @@ def dec15(nums):
     
     return best
 
-''' Divide & Conquer, TC = n log(n), SC = log(n)'''
+
 def dec17(nums):
-    
+    ''' Divide & Conquer, TC = n log(n), SC = log(n)'''
     def helper(nums, left, right):
         
         if left > right:
@@ -89,9 +91,9 @@ def dec17(nums):
     
     return helper(nums, 0, len(nums)-1)
 
-''' TC = n, SC = 1 '''
-def ans1(self, nums: List[int]) -> int:
 
+def ans1(self, nums: List[int]) -> int:
+    ''' TC = n, SC = 1 '''
     a = 0
     m = -sys.maxsize
 
@@ -105,9 +107,9 @@ def ans1(self, nums: List[int]) -> int:
 
     return m
 
-''' TC = n, SC = 1, ans1 is better solution as it does not use else '''
-def p1(self, nums: List[int]) -> int:
 
+def p1(self, nums: List[int]) -> int:
+    ''' TC = n, SC = 1, ans1 is better solution as it does not use else '''
     maxv = -sys.maxsize
     csum = 0
 
@@ -123,9 +125,9 @@ def p1(self, nums: List[int]) -> int:
 
     return maxv
 
-''' TC = n, SC = 1 '''
-def p2(self, nums: List[int]) -> int:
 
+def p2(self, nums: List[int]) -> int:
+    ''' TC = n, SC = 1 '''
     t = 0
     m = -sys.maxsize
 
@@ -154,7 +156,20 @@ def p(nums):
     return maxi
         
     
+def z(nums):
     
+    mx = -sys.maxsize
+    s = 0
+    n = len(nums)
     
+    for v in nums:
+        s += v
+        
+        if v > s:
+            s = v
+        if s > mx:
+            mx = s
+        
+    return mx
     
 
