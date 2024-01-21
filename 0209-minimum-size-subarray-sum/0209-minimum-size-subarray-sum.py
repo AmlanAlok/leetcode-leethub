@@ -10,7 +10,8 @@
 '''
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        return p(target, nums)
+        # return p(target, nums)
+        return z(target, nums)
     
 def dec31(target, nums):
     
@@ -112,6 +113,32 @@ def p(target, nums):
     if mini == sys.maxsize:
         return 0
     return mini
+
+def z(target, nums):
+    
+    n = len(nums)
+    mn = sys.maxsize
+    t = 0
+    i = j = 0
+    
+    while j < n:
+        
+        while t < target and j < n:
+            t += nums[j]
+            j += 1
+        
+        while t >= target and i < j:
+            length = j-i
+            if length < mn:
+                mn = length
+            t -= nums[i]
+            i += 1
+            
+    if mn == sys.maxsize:
+        return 0
+    return mn
+
+
             
     
     
