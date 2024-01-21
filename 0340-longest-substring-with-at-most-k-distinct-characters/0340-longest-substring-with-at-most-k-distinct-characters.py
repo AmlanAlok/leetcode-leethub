@@ -173,23 +173,28 @@ def jan3(s, k):
 def p(s, k):
     
     d = {}
-    i = 0
-    l = len(s)
+    n = len(s)
+    i = j = 0
     mx = 0
     
-    for j in range(l):
+    while j < n:
         
-        z = s[j]
-        d[z] = d.get(z, 0) + 1
-        
-        if len(d) <= k:
-            mx += 1
-        else:
-            i = j - mx
+        while len(d) <= k and j < n:
+            c = s[j]
+            d[c] = d.get(c, 0) + 1
+            
+            if len(d) <= k:
+                mx = max(mx, j-i+1)
+                
+            j += 1
+            
+        while len(d) > k and i < j:
             c = s[i]
             d[c] -= 1
             if d[c] == 0:
                 del d[c]
+            i += 1
+    
     return mx
             
         
