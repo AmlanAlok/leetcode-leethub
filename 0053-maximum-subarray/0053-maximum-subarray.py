@@ -158,18 +158,22 @@ def p(nums):
     
 def z(nums):
     
+    t = 0
     mx = -sys.maxsize
-    s = 0
     n = len(nums)
     
-    for v in nums:
-        s += v
+    for j in range(n):
         
-        if v > s:
-            s = v
-        if s > mx:
-            mx = s
+        num = nums[j]
         
+        t += num
+        
+        if num > t:
+            t = num
+        if t > mx:
+            mx = t
+    
     return mx
+    
     
 
