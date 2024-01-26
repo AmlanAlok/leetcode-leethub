@@ -8,7 +8,7 @@ https://leetcode.com/problems/longest-repeating-character-replacement/discuss/44
 '''
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        return dec22(s, k)
+        return p(s, k)
         
     
 def ans1(s, k):
@@ -110,6 +110,7 @@ def dec22(s, k):
     
     return mx
 
+'''Does not work'''
 def jan26(s, k):
     '''TC = 2n = n, SC = 26'''
     n = len(s)
@@ -117,6 +118,7 @@ def jan26(s, k):
     d = {}
     maxf = 0
     i = 0
+    j = 0
     
     while j < n:
         
@@ -127,7 +129,7 @@ def jan26(s, k):
             if d[c] > maxf:
                 maxf = d[c]
             
-            if (j-i+1) > mx:
+            if (j-i+1) > mx and (j-i+1) - maxf <= k:
                 mx = (j-i+1)
             
             j += 1
@@ -136,9 +138,36 @@ def jan26(s, k):
             c = s[i]
             d[c] -= 1
             i += 1
-            if d[c] == 0:
-                del d[c]
+            # if d[c] == 0:
+            #     del d[c]    # this will optimize space to k+1
             
     return mx
+
+def p(s, k):
+    
+    n = len(s)
+    mx = 0
+    i = 0
+    d = {}
+    maxf = 0
+    
+    for j in range(n):
+        c = s[j]
+        d[c] = d.get(c, 0) + 1
+        if d[c] > maxf:
+            maxf = d[c]
+        
+        while (j-i+1) - maxf > k:
+            z = s[i]
+            d[z] -= 1
+            i += 1
+        
+        length = (j-i+1)
+        
+        if length > mx:
+            mx = length
+    
+    return mx
+        
                 
             
