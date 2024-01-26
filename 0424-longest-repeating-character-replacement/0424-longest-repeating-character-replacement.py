@@ -110,8 +110,8 @@ def dec22(s, k):
     
     return mx
 
-def p(s, k):
-    
+def jan26(s, k):
+    '''TC = 2n = n, SC = 26'''
     n = len(s)
     mx = 0
     d = {}
@@ -136,6 +136,8 @@ def p(s, k):
             c = s[i]
             d[c] -= 1
             i += 1
+            if d[c] == 0:
+                del d[c]
             
     return mx
                 
