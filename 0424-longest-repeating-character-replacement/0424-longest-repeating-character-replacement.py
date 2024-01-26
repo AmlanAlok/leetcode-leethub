@@ -1,9 +1,15 @@
 '''
 https://leetcode.com/problems/longest-repeating-character-replacement/discuss/4443411/Explaining-intuition-behind-why-lowering-the-max_frequency-is-not-required
+
+"ABAB"
+2
+"AABABBA"
+1
 '''
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
         return dec22(s, k)
+        
     
 def ans1(s, k):
     d = {}
@@ -103,4 +109,34 @@ def dec22(s, k):
         mx = max(mx, (j-i+1))
     
     return mx
+
+def p(s, k):
+    
+    n = len(s)
+    mx = 0
+    d = {}
+    maxf = 0
+    i = 0
+    
+    while j < n:
         
+        while (j-i+1) - maxf <= k and j < n:
+            c = s[j]
+            d[c] = d.get(c, 0) + 1
+            
+            if d[c] > maxf:
+                maxf = d[c]
+            
+            if (j-i+1) > mx:
+                mx = (j-i+1)
+            
+            j += 1
+        
+        while (j-i+1) - maxf > k and i < j:
+            c = s[i]
+            d[c] -= 1
+            i += 1
+            
+    return mx
+                
+            
