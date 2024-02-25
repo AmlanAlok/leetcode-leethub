@@ -10,21 +10,7 @@ import sys
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         # return p(nums)
-        return prac(nums)
-    
-def dec31(nums):
-    
-    t = 0
-    maxi = nums[0]
-    
-    for n in nums:
-        t += n
-        
-        t = max(t, n)
-        maxi = max(maxi, t)
-    
-    return maxi
-    
+        return prac(nums)    
 
 def dec16(nums):
     ''' Kadane's Algo, TC = n, SC = 1'''
@@ -38,24 +24,6 @@ def dec16(nums):
         mx = max(mx, t)
     
     return mx
-
-
-def dec15(nums):
-    ''' Kadane's Algo, TC = n, SC = 1'''
-    t = 0
-    best = nums[0]
-    
-    for n in (nums):
-        t += n
-        
-        if n > t:
-            t = n
-        if t > best:
-            best = t
-
-        # best = best if best > t else t
-    
-    return best
 
 
 def dec17(nums):
@@ -92,22 +60,6 @@ def dec17(nums):
     return helper(nums, 0, len(nums)-1)
 
 
-def ans1(self, nums: List[int]) -> int:
-    ''' TC = n, SC = 1 '''
-    a = 0
-    m = -sys.maxsize
-
-    for n in nums:
-        a += n
-
-        if a < n:
-            a = n
-        if m < a:
-            m = a
-
-    return m
-
-
 def p1(self, nums: List[int]) -> int:
     ''' TC = n, SC = 1, ans1 is better solution as it does not use else '''
     maxv = -sys.maxsize
@@ -126,22 +78,6 @@ def p1(self, nums: List[int]) -> int:
     return maxv
 
 
-def p2(self, nums: List[int]) -> int:
-    ''' TC = n, SC = 1 '''
-    t = 0
-    m = -sys.maxsize
-
-    for n in nums:
-
-        t += n
-
-        if n > t:
-            t = n
-        if t > m:
-            m = t
-
-    return m
-
 def p(nums):
     
     maxi = -sys.maxsize
@@ -156,26 +92,8 @@ def p(nums):
     return maxi
         
     
-def z(nums):
-    
-    t = 0
-    mx = -sys.maxsize
-    n = len(nums)
-    
-    for j in range(n):
-        
-        num = nums[j]
-        
-        t += num
-        
-        if num > t:
-            t = num
-        if t > mx:
-            mx = t
-    
-    return mx
-    
 def prac(nums):
+    ''' Kadane's Algo, TC = n, SC = 1'''
     largest_sum = -sys.maxsize
     total = 0
     
