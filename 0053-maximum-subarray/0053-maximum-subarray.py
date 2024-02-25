@@ -10,7 +10,7 @@ import sys
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         # return p(nums)
-        return z(nums)
+        return prac(nums)
     
 def dec31(nums):
     
@@ -174,6 +174,22 @@ def z(nums):
             mx = t
     
     return mx
+    
+def prac(nums):
+    largest_sum = -sys.maxsize
+    total = 0
+    
+    for n in nums:
+    	
+        total += n
+        
+        if n > total:
+        	total = n
+        if total > largest_sum:
+        	largest_sum = total
+    
+    return largest_sum
+    
     
     
 
