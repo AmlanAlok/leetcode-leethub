@@ -198,7 +198,7 @@ def p(s, k):
     
     return mx
             
-def prac(s, k):
+def prac_1(s, k):
 
 	max_len = 0
 	i = j = 0
@@ -226,3 +226,32 @@ def prac(s, k):
 
 	return max_len
     
+def prac(s, k):
+
+	max_len = 0
+	i = j = 0
+	n = len(s)
+	char_dict = {}
+
+	while j < n:
+		c = s[j]
+		char_dict[c] = char_dict.get(c, 0) + 1
+
+		if len(char_dict) <= k:
+			max_len += 1
+		else:
+			i = j - max_len
+			c = s[i]
+			char_dict[c] -= 1
+
+			if char_dict[c] == 0:
+				del char_dict[c]
+		
+		j += 1
+
+	return max_len
+        
+        
+        
+        
+        
