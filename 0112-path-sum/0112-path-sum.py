@@ -14,7 +14,7 @@
 #         self.right = right
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        return jan3(root, targetSum)
+        return sol(root, targetSum)
     
 def jan3(root, t):
     
@@ -32,5 +32,23 @@ def jan3(root, t):
     return l or r
     '''TC = N, SC = worst N or avg log(n)'''
     
-    
+def is_leaf(node):
+	if node.left == None and node.right == None:
+		return True
+	return False
+
+def sol(root, targetSum):
+
+	if root is None:
+		return False
+
+	leaf = is_leaf(root)
+
+	targetSum -= root.val
+
+	if targetSum == 0 and leaf:
+		return True
+
+	return sol(root.left, targetSum) or sol(root.right, targetSum)
+
     
