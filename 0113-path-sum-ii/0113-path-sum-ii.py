@@ -15,11 +15,10 @@
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
         return sol(root, targetSum)
-    
+
+
 def is_leaf(node):
-	if node.left == None and node.right == None:
-		return True
-	return False
+	return node.left == None and node.right == None
 
 
 def sol(root, targetSum):
