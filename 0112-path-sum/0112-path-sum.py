@@ -42,11 +42,9 @@ def sol(root, targetSum):
 	if root is None:
 		return False
 
-	leaf = is_leaf(root)
-
 	targetSum -= root.val
 
-	if targetSum == 0 and leaf:
+	if targetSum == 0 and is_leaf(root):
 		return True
 
 	return sol(root.left, targetSum) or sol(root.right, targetSum)
