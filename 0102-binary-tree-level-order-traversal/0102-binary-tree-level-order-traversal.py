@@ -16,7 +16,7 @@ Level Order Traversal means BFS (Breadth First Search). BFS is done using queue.
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        return ans1(root)
+        return sol(root)
     
 def max_depth(root):
     
@@ -79,6 +79,38 @@ def ans1(root):
             ans.append(x)
     
     return ans
+
+def sol(root):
+
+	ans = []
+
+	if root is None:
+		return ans
+
+	stack = deque()
+	stack.append(root)
+
+	while stack:
+
+		level_size = len(stack)
+
+		level_elements = []
+
+		for _ in range(level_size):
+
+			current = stack.popleft()
+
+			children = [current.left, current.right]
+
+			for child in children:
+				if child:
+					stack.append(child)
+
+			level_elements.append(current.val)
+
+		ans.append(level_elements)
+
+	return ans
             
     
     
