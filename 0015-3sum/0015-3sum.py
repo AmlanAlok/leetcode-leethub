@@ -58,7 +58,7 @@ def jan5(nums):
         
         
 def dec27(nums):
-    '''TC'''
+    '''TC = n2, SC = n (worst case)'''
     
     l = len(nums)
     nums.sort()
