@@ -8,7 +8,7 @@
 
 class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
-        return p(fruits)
+        return p9(fruits)
     
 def ans1(nums: List[int]) -> int:
     
@@ -86,7 +86,7 @@ def error_dec20(nums):
         
     return s[0]
         
-def p(fruits):
+def p9(fruits):
     '''TC = n, SC = k+1'''
     l = len(fruits)
     d = {}
@@ -109,9 +109,11 @@ def p(fruits):
                 del d[z]
     
     return mx
-            
-        
+
+# def p(fruits):
     
+    
+
     
     
             
