@@ -1,7 +1,10 @@
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        
+        return this.sol1(nums, target);
+    }
+    
+    public int[] sol1(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         
         for (int i=0; i < nums.length; i++){
