@@ -8,7 +8,7 @@
 '''
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        return dec22(nums, target)
+        return sol(nums, target)
     
 def dec22(nums, t):
     d = {}
@@ -67,4 +67,20 @@ def old_p5(self, nums: List[int], t: int) -> List[int]:
             return [d[c], i]
         else:
             d[v] = i
+        
+def sol(nums, target):
+    
+    d = {}
+    
+    for i in range(len(nums)):
+        
+        n = nums[i]
+        diff = target - n
+        
+        if diff in d:
+            return [d[diff], i]
+        else:
+            d[n] = i
+        
+    return []
         
