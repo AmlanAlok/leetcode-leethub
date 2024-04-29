@@ -8,7 +8,7 @@
 '''
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        return sol(nums, target)
+        return april28(nums, target)
     
 def dec22(nums, t):
     d = {}
@@ -52,7 +52,7 @@ def y22aug02(self, nums: List[int], target: int) -> List[int]:
 
     return []
 
-        
+
 ''' != not required'''    
 def old_p5(self, nums: List[int], t: int) -> List[int]:
 
@@ -83,4 +83,21 @@ def sol(nums, target):
             d[n] = i
         
     return []
+
+def april28(nums, target):
+    
+    d = {}
+    
+    for i, v in enumerate(nums):
         
+        complement = target - v
+        
+        if complement in d:
+            return [d[complement], i]
+        else:
+            d[v] = i
+            
+    return []
+            
+    
+    
