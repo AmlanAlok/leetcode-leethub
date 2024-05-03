@@ -1,14 +1,27 @@
+'''
+[1,2,3,0,0,0]
+3
+[2,5,6]
+3
+[1]
+1
+[]
+0
+[0]
+0
+[1]
+1
+'''
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        return ans2(nums1, m, nums2, n)
+        return may03_24(nums1, m, nums2, n)
     
-'''
-TC = m+n, SC = m
-'''
+
 def ans1(nums1, m, nums2, n):
+    ''' TC = m+n, SC = m '''
     
     a = nums1[:m]       # SC = m
     
@@ -26,11 +39,9 @@ def ans1(nums1, m, nums2, n):
     
     # return nums1
 
-'''
-TC = m+n
-SC = 1
-'''
+
 def ans2(nums1, m, nums2, n):
+    ''' TC = m+n, SC = 1 '''
     
     i = m+n-1           # last index
     j, k = m-1, n-1
@@ -50,3 +61,32 @@ def ans2(nums1, m, nums2, n):
         i-=1
     
     # return nums1
+    
+def may03_24(nums1, m, nums2, n):
+    
+    i = m-1
+    j = n-1
+    k = len(nums1)-1
+    
+    while k >= 0:
+        
+        if i >= 0 and j >= 0 and nums1[i] >= nums2[j]:
+            nums1[k] = nums1[i]
+            i -= 1
+        elif i >= 0 and j >= 0 and nums1[i] < nums2[j]: 
+            nums1[k] = nums2[j]
+            j -= 1
+        elif i == -1:
+            while j >= 0:
+                nums1[k] = nums2[j]
+                j -= 1
+                k -= 1
+        elif j == -1:
+            while i >= 0:
+                nums1[k] = nums1[i]
+                i -= 1
+                k -= 1
+            
+        k -= 1
+    
+        
