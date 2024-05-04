@@ -5,11 +5,11 @@
 '''
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        return p2(prices)
+        return may04_24(prices)
     
-'''One Pass Two-Pointer Approach'''
-def ans_1(prices: List[int]) -> int:
 
+def ans_1(prices: List[int]) -> int:
+    '''One Pass Two-Pointer Approach'''
     b = 0
     s = 0
     m = 0
@@ -45,7 +45,6 @@ def p1(prices: List[int]) -> int:
 
     return m
 
-
 def p2(prices: List[int]) -> int:
     i, j = 0, 0
     mx = 0
@@ -61,3 +60,23 @@ def p2(prices: List[int]) -> int:
         j += 1
 
     return mx
+
+def may04_24(prices):
+    
+    buy = prices[0]
+    sell = 0
+    profit = 0
+    
+    for n in prices:
+        if n < buy:
+            buy = n
+            sell = n
+        if n > sell:
+            sell = n
+        
+        profit = max(sell - buy, profit)
+    
+    return profit if profit > 0 else 0
+        
+    
+    
