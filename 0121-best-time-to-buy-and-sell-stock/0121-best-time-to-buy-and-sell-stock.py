@@ -5,7 +5,7 @@
 '''
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        return may04_24(prices)
+        return may05_24(prices)
     
 
 def ans_1(prices: List[int]) -> int:
@@ -60,6 +60,23 @@ def p2(prices: List[int]) -> int:
         j += 1
 
     return mx
+
+def may05_24(prices):
+    
+    buy = prices[0]
+    sell = 0
+    profit = 0
+    
+    for n in prices:
+        if n < buy:
+            buy = n
+            
+        sell = n
+        
+        profit = max(sell - buy, profit)
+    
+    return profit if profit > 0 else 0
+
 
 def may04_24(prices):
     
