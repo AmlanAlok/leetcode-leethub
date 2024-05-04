@@ -75,7 +75,7 @@ def may05_24(prices):
         
         profit = max(sell - buy, profit)
     
-    return profit if profit > 0 else 0
+    return profit 
 
 
 def may04_24(prices):
