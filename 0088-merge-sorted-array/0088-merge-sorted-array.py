@@ -75,7 +75,6 @@ def may04_24(nums1, m, nums2, n):
             nums1[k] = nums1[i]
             i -= 1
         elif i < 0 or (j >= 0 and nums1[i] < nums2[j]):
-            print(j)
             nums1[k] = nums2[j]
             j -= 1
         
