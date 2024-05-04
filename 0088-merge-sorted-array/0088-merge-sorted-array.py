@@ -64,7 +64,7 @@ def ans2(nums1, m, nums2, n):
     
 
 def may04_24(nums1, m, nums2, n):
-    
+    '''TC = m+n, SC = 1'''
     k = len(nums1)-1
     i = m-1
     j = n-1
@@ -84,6 +84,7 @@ def may04_24(nums1, m, nums2, n):
     
     
 def may03_24(nums1, m, nums2, n):
+    '''TC = m+n, SC = 1'''
     
     i = m-1
     j = n-1
