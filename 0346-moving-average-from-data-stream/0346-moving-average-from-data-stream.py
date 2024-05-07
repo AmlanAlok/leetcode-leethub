@@ -1,15 +1,17 @@
 from collections import deque
 
 class MovingAverage:
-    
+    '''
+    More efficient ans
+    '''
     def __init__(self, size: int):
         self.window = deque(maxlen=size)
-        self.count = 0
+        # self.count = 0
         self.total = 0
         self.size = size
     
     def next(self, val: int) -> float:
-        self.count += 1
+        # self.count += 1
         
         if len(self.window) >= self.size:
             first = self.window.popleft()
