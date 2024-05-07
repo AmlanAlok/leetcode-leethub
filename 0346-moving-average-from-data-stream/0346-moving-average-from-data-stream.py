@@ -3,15 +3,16 @@ from collections import deque
 class MovingAverage:
     '''
     More efficient ans
+    Don't calculate the sum in every invocation
     '''
     def __init__(self, size: int):
+        '''SC = n = window size'''
         self.window = deque(maxlen=size)
-        # self.count = 0
         self.total = 0
         self.size = size
     
     def next(self, val: int) -> float:
-        # self.count += 1
+        '''TC = 1'''
         
         if len(self.window) >= self.size:
             first = self.window.popleft()
