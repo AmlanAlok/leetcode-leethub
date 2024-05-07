@@ -1,7 +1,12 @@
 from collections import deque
 
 class MovingAverage:
-
+    '''
+    Let N = size of window
+    M = number of calls to next
+    
+    TC = N*M
+    '''
     def __init__(self, size: int):
         self.window = deque(maxlen=size)
 
@@ -19,3 +24,9 @@ class MovingAverage:
 # Your MovingAverage object will be instantiated and called as such:
 # obj = MovingAverage(size)
 # param_1 = obj.next(val)
+
+
+'''
+["MovingAverage","next","next","next","next"]
+[[3],[1],[10],[3],[5]]
+'''
