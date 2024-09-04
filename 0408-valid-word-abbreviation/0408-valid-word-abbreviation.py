@@ -1,19 +1,3 @@
-'''
-"internationalization"
-"i12iz4n"
-"substitution"
-"s55n"
-"substitution"
-"s010n"
-"substitution"
-"s10n"
-"substitution"
-"sub4u4n"
-"substitution"
-"12"
-"substitution"
-"su3ilu2on"
-'''
 class Solution:
     def validWordAbbreviation(self , word: str, abbr: str) -> bool:
         return ans(word, abbr)
@@ -23,8 +7,6 @@ not adjacent
 not empty
 no leading 0
 '''
-
-
 def ans(word, abbr):
     '''TC=n, SC=1'''
     def is_number(c):
@@ -55,6 +37,48 @@ def ans(word, abbr):
     return i == N and j == M
 
 
+'''
+"internationalization"
+"i12iz4n"
+"apple"
+"a2e"
+"internationalization"
+"i5a11o1"
+"substitution"
+"s55n"
+"substitution"
+"s010n"
+"substitution"
+"s10n"
+"substitution"
+"sub4u4n"
+"substitution"
+"12"
+"substitution"
+"su3ilu2on"
+"hi"
+"hi1"
+'''
+
+def discus(word, abbr):
+    i = j = 0
+    m, n = len(word), len(abbr)
+    while i < m and j < n:
+        if word[i] == abbr[j]:
+            i += 1
+            j += 1
+        elif abbr[j] == "0":
+            return False
+        elif abbr[j].isnumeric():
+            k = j
+            while k < n and abbr[k].isnumeric():
+                k += 1
+            i += int(abbr[j:k])
+            j = k
+        else:
+            return False
+    return i == m and j == n
+        
 def fail(word, abbr):
     
     N = len(word)
@@ -91,38 +115,6 @@ def fail(word, abbr):
             i, j = i + 1, j + 1
         
     return True
-
-'''
-"internationalization"
-"i12iz4n"
-"apple"
-"a2e"
-"internationalization"
-"i5a11o1"
-"hi"
-"hi1"
-'''
-
-def discus(word, abbr):
-    i = j = 0
-    m, n = len(word), len(abbr)
-    while i < m and j < n:
-        if word[i] == abbr[j]:
-            i += 1
-            j += 1
-        elif abbr[j] == "0":
-            return False
-        elif abbr[j].isnumeric():
-            k = j
-            while k < n and abbr[k].isnumeric():
-                k += 1
-            i += int(abbr[j:k])
-            j = k
-        else:
-            return False
-    return i == m and j == n
-        
-            
             
             
             
