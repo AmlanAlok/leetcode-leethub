@@ -25,9 +25,8 @@ no leading 0
 '''
 
 
-
 def ans(word, abbr):
-    
+    '''TC=n, SC=1'''
     def is_number(c):
         return True if 48 <= ord(c) <= 58 else False
 
