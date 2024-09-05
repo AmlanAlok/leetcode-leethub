@@ -60,7 +60,7 @@ def ans(word, abbr):
 "hi1"
 '''
 
-def discus(word, abbr):
+def discussion(word, abbr):
     i = j = 0
     m, n = len(word), len(abbr)
     while i < m and j < n:
