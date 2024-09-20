@@ -10,4 +10,10 @@ def ans(s):
         if count[ch] == 1:
             return idx     
     return -1
-        
+
+'''
+"leetcode"
+"loveleetcode"
+"aabb"
+"dddccdbba"
+'''
