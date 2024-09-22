@@ -3,7 +3,7 @@ class Solution:
         return ans(s)
     
 def ans(s):
-    
+    '''TC=n, SC=1'''
     i = 1
     N = len(s)
     score = 0
