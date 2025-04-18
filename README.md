@@ -11,4 +11,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/AmlanAlok/leetcode-leethub/tree/master/0001-two-sum) |
+## Database
+|  |
+| ------- |
+| [1908-recyclable-and-low-fat-products](https://github.com/AmlanAlok/leetcode-leethub/tree/master/1908-recyclable-and-low-fat-products) |
 <!---LeetCode Topics End-->
